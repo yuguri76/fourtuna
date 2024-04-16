@@ -4,18 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4조참치에 어서오세요</title>
-    <link rel="stylesheet" href="yeojae.css" />
+    <title>다이닝 4조참치</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-    <title>4조참치에 어서오세요</title>
+    <title>다이닝 4조참치</title>
     <style>
         body {
-            background: white;
-            height: 400vh;
+            background: rgb(244, 241, 235);
+            height: 800vh;
         }
 
         div {
@@ -29,13 +26,123 @@
             height: 100vh;
         }
 
-        h1 {
-            font-size: 50px;
+        .top-text {
+            position: absolute;
+            top: 20%;
+            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+            opacity: 1;
+            transition: opacity 2s ease-in-out;
         }
 
-        .img1 {
+        .section1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 20px;
+            color: black;
+            text-align: left;
+            height: 100vh;
+            background: url('image/4조참치_2트.png') no-repeat left top 30px;
+            margin-left: 30px;
+            background-size: 200px;
+            opacity: 1;
+            transition: opacity 2s ease-in-out, transform 2s ease;
+        }
+
+        .section1 h2 {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease forwards;
+            line-height: 3rem;
+            transition: transform 2s ease-in-out;
+        }
+
+        .section1 h2:nth-child(1) {
+            animation-delay: 1s;
+        }
+
+        .section1 h2:nth-child(2) {
+            animation-delay: 3s;
+            margin-bottom: 5rem;
+        }
+
+        .section1 img {
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards 5s;
+            width: 50px;
+            height: auto;
+            margin-top: 20px;
+            align-self: center;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section2 {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, rgb(244, 241, 235), rgb(65, 185, 211));
+            opacity: 1;
+        }
+
+        .opacityCover {
             position: absolute;
-            background-image: url("src/background/Goverment24.png?raw=true");
+            width: 100%;
+            height: 300px;
+            z-index: 20;
+            background: linear-gradient(to bottom, rgba(65, 185, 211, 1), rgba(65, 185, 211, 1) 10%, rgba(65, 185, 211, 0));
+        }
+
+        .section3 {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .section3 video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+        }
+
+        .section3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgb(65, 185, 211) 0%, rgb(74, 118, 214) 100%);
+            z-index: 2;
+            opacity: 0;
+        }
+
+        .background_1 {
+            position: absolute;
+            /* background-image: url("image/4조참치.png"); */
             z-index: -1;
             background-position: center;
             background-repeat: no-repeat;
@@ -70,7 +177,6 @@
     <script>
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         document.addEventListener("DOMContentLoaded", ready);
-
         function ready() {
             let observer = new IntersectionObserver((e) => {
                 e.forEach((ob) => {
@@ -79,36 +185,23 @@
                         if (ob.target.className == 'img1') {
                             ob.target.style.opacity = 0.5;
                             setTimeout(function () {
-                                let changeBG = 'url("src/logo.png")';
-                                ob.target.style.backgroundImage = changeBG;
-                            }, 2000
-                            )
+                                ob.target.style.backgroundImage = 'url("src/logo.png")';
+                            }, 2000);
                         } else {
                             ob.target.style.opacity = 1;
                         }
-                        //ob.target.style.transform='rotate(0deg)';//이상한거
                     }
-                    //ob.intersectionRatio //박스가 반쯤 보이면 0.5 출력
-
-                })
-            })
-
-            let div = document.querySelectorAll('div');
-            observer.observe(div[0]) // 감시
-            observer.observe(div[1])
-            observer.observe(div[2])
-            observer.observe(div[3])
+                });
+            });
+            let divs = document.querySelectorAll('div');
+            divs.forEach(div => observer.observe(div));
             $(window).scroll(function () {
                 var scrT = $(window).scrollTop();
                 console.log(scrT); //스크롤 값 확인용
                 if (scrT >= $(document).height() - $(window).height() - 10) {
-                    //스크롤이 끝에 도달했을때 실행될 이벤트
-                    // 다른 HTML 파일로 이동
                     sessionStorage.setItem('first', 'first');
                     history.pushState(null, "");
                     window.location.href = 'main.html';
-                } else {
-                    //아닐때 이벤트
                 }
             });
         }
@@ -116,29 +209,42 @@
 </head>
 
 <body>
-    <div class="img1"></div>
-    <div class="Government">
-        <h2>내배캠이라는 거친 바다에 뛰어든 싱싱하고 힘찬 개발자들의 모임</h2>
-        <h1>4조참치</h1>
+    <div class="background_1"></div>
+    <div class="top-text">
+        <h1>WELCOME</h1>
     </div>
-    <div class="Government">
+    <div class="section1">
+        <h2>먼 발걸음 주셔서 감사합니다.</h2>
+        <h2>저희 4조참치는 손님께 최고의 경험을 제공해드리고자 합니다.</h2>
+        <img src="image/아래화살표.png" alt="Scroll Down">
+    </div>
+    <div class="section2">
+    </div>
+    <div class="opacityCover">
+    </div>
+    <div class="section3">
+        <video src="video/tuna.mov" autoplay muted loop preload="auto">
+        </video>
+    </div>
+    <div class="section4">
         <h1>이렇게 팔딱팔딱 뛰는 참치들처럼 거친 바다를 헤엄치는 저희는...</h1>
     </div>
-
     <div>
-        <div class="wrapper">
-            <h1>어쩌구저쩌구 약속</h1>
+        <div class="section5">
+            <h1>사조참치!</h1>
         </div>
-
     </div>
-
+    <div>
+        <div class="section6">
+            <h1>저희 사조참치는 약속합니다</h1>
+        </div>
+    </div>
     <div style="opacity: 1;">
-        <div class="last1">
+        <div class="section7">
             <h1>메뉴소개 ㄱㄱ</h1>
         </div>
     </div>
     <div>
-
     </div>
 </body>
 
