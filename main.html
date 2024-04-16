@@ -18,7 +18,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-/* 
+        /* 
         .great-vibes-regular {
             font-family: "Great Vibes", cursive;
             font-weight: 400;
@@ -26,30 +26,32 @@
         } */
         /* 기본 폰트스타일 */
         * {
-            font-family: "궁서", "Gothic A1", "Great Vibes", sans-serif;
+            font-family: "Gothic A1", "Great Vibes", sans-serif;
             font-weight: 700;
             font-style: normal;
         }
 
-         .logo {
+    
+
+        .logo {
             width: 100px;
             height: 40px;
-             
-            
+
+
 
             /* position: absolute; */
             padding-top: 3 px;
             padding-left: 1 px;
-         }
+        }
 
-         .logoImage{
+        .logoImage {
             background-position: center center;
             background-size: cover;
-            width:100%;
-            height:100%;
+            width: 100%;
+            height: 100%;
 
-             
-         }
+
+        }
 
         /* 타이틀 */
         .introtitle,
@@ -104,12 +106,12 @@
             color: rgb(14, 111, 223);
             padding: 3px 3px 3px 5px;
 
-       
+
 
             border-left: 5px solid;
-            
-            background-color:rgba(139, 232, 255, 0.3);
-             
+
+            background-color: rgba(139, 232, 255, 0.3);
+
         }
 
         .card {
@@ -123,7 +125,7 @@
             width: 80px;
             height: 40px;
 
-            color:white;
+            color: white;
 
             display: flex;
             flex-direction: row;
@@ -164,25 +166,42 @@
         .card-text {
             text-align: center;
             color: grey;
-
-        
         }
 
         .footer {
             text-align: right;
             background-color: rgba(139, 232, 255, 0.3);
-            height:80px;
+            height: 80px;
+        }
+
+        .row {
+            animation: fadein 1s;
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .btn {
+            opacity:0.4
         }
     </style>
 
     <script>
-        //
+
     </script>
 </head>
 
 <body>
     <div class="logo">
-    <img class="logoImage" src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2F411868d5-32a5-4a27-9d92-2d8767e8f430%2FUntitled.png?table=block&id=bac55425-c72d-46dc-a009-b7605abc1b34&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=d7ef0868-ed79-4d87-aa6a-2180b6ad46eb&cache=v2">
+        <img class="logoImage"
+            src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2F411868d5-32a5-4a27-9d92-2d8767e8f430%2FUntitled.png?table=block&id=bac55425-c72d-46dc-a009-b7605abc1b34&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=d7ef0868-ed79-4d87-aa6a-2180b6ad46eb&cache=v2">
     </div>
     <div class="header">
         <div class="introtitle ">
@@ -210,16 +229,27 @@
                             class="card-img-top" alt="...">
 
                     </div>
-                    <!-- best 아이콘 만들어보기 -->
+                    
 
                     <span class="bestIcon">BEST</span>
 
                     <div class="card-body">
                         <h5 class="card-title">김기남</h5>
-                        <p class="card-text">4조 원</p>
+                        <p class="card-text">4,000,000,000,000원</p>
+                         
+                            <div class="row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                            <button class="btn btn-secondary rounded-pill px-1" type="button">
+                                #고양이</button>
+                            <button class="btn btn-secondary rounded-pill px-1" type="button">
+                                #11</button>
+                        </div> 
                     </div>
+                     
+                     
                 </div>
+                
             </div>
+            
 
 
 
@@ -232,7 +262,8 @@
                     <span class="bestIcon">BEST</span>
                     <div class="card-body">
                         <h5 class="card-title">김승수</h5>
-                        <p class="card-text">4조 원</p>
+                        <p class="card-text">4,000,000,000,000원</p>
+                         
                     </div>
                 </div>
             </div>
@@ -247,7 +278,7 @@
                     <span class="bestIcon">BEST</span>
                     <div class="card-body">
                         <h5 class="card-title">노상윤</h5>
-                        <p class="card-text">4조 원</p>
+                        <p class="card-text">4,000,000,000,000원</p>
                     </div>
                 </div>
             </div>
@@ -262,7 +293,7 @@
                     <span class="bestIcon">BEST</span>
                     <div class="card-body">
                         <h5 class="card-title">문수정</h5>
-                        <p class="card-text">4조 원</p>
+                        <p class="card-text">4,000,000,000,000원</p>
                     </div>
                 </div>
             </div>
@@ -277,7 +308,7 @@
                     <span class="bestIcon">BEST</span>
                     <div class="card-body">
                         <h5 class="card-title">유규리</h5>
-                        <p class="card-text">4조 원</p>
+                        <p class="card-text">4,000,000,000,000원</p>
                     </div>
                 </div>
             </div>
@@ -385,9 +416,9 @@
 
     <footer class="footer mt-auto py-3 bg-body-tertiary">
         <div class="container">
-          <span class="text-body-secondary">4조참치</span>
+            <span class="text-body-secondary">4조참치</span>
         </div>
-      </footer>
+    </footer>
 </body>
 
 </html>
