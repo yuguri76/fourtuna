@@ -10,9 +10,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>다이닝 4조참치</title>
     <style>
+        @font-face {
+            font-family: 'SokchoBadaBatang';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SokchoBadaBatang.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'BookkMyungjo-Bd';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'WavvePADO-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SokchoBadaDotum';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SokchoBadaDotum.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             background: white;
-            height: 800vh;
+            height: 700vh;
+            font-family: 'SokchoBadaDotum';
         }
 
         div {
@@ -36,17 +65,23 @@
             transition: opacity 2s ease-in-out;
         }
 
+        .logo {
+            width: 200px;
+            height: auto;
+            margin: 30px;
+        }
+
         .section1 {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding-left: 20px;
             color: black;
             text-align: left;
             height: 100vh;
+            width: 100vw;
             background: linear-gradient(white 60vh, rgb(178, 224, 234) 100%);
-            margin-left: 30px;
+            margin-top: -5vh;
             opacity: 1;
             transition: opacity 2s ease-in-out, transform 2s ease;
         }
@@ -55,7 +90,7 @@
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 1.5s ease forwards;
-            line-height: 3rem;
+            line-height: 4rem;
             transition: transform 2s ease-in-out;
         }
 
@@ -73,7 +108,7 @@
             animation: fadeIn 2s ease-in-out forwards 5s;
             width: 50px;
             height: auto;
-            margin-top: 20px;
+            margin-top: 150px;
             align-self: center;
         }
 
@@ -106,18 +141,28 @@
             opacity: 1;
         }
 
-        .opacityCover {
+        .section3 {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .opacityCover1 {
             position: absolute;
+            align-self: flex-start;
             width: 100%;
             height: 300px;
             z-index: 20;
             background: linear-gradient(to bottom, rgba(65, 185, 211, 1), rgba(65, 185, 211, 1) 10%, rgba(65, 185, 211, 0));
         }
 
-        .section3 {
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
+        .opacityCover2 {
+            position: absolute;
+            align-self: flex-end;
+            width: 100%;
+            height: 300px;
+            z-index: 20;
+            background: linear-gradient(to top, rgba(0, 25, 89, 1), rgba(0, 25, 89, 1) 10%, rgba(0, 25, 89, 0));
         }
 
         .section3 video {
@@ -137,6 +182,37 @@
             background: linear-gradient(to bottom, rgb(65, 185, 211) 0%, rgb(74, 118, 214) 100%);
             z-index: 2;
             opacity: 0;
+        }
+
+        .section3::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgb(16, 80, 183) 0%, rgb(2, 32, 80) 100%);
+            z-index: 3;
+            opacity: 0.2;
+        }
+
+        .section4::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, rgb(2, 32, 80) 0%, rgb(255, 255, 255) 100%);
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .section4 {
+            background: linear-gradient(to bottom, rgb(0, 25, 89) 0%, rgba(0, 25, 89, 1) 10%, rgba(0, 25, 89, 0.95) 15%, rgba(0, 25, 89, 0.90) 25%, rgba(0, 25, 89, 0) 80%);
+
+            position: relative;
+            overflow: hidden;
         }
 
         .background_1 {
@@ -209,8 +285,9 @@
 
 <body>
     <div class="background_1"></div>
+    <img class="logo" src="image/4조참치_2트.png" alt="4조참치 로고">
     <div class="top-text">
-        <h1>WELCOME</h1>
+        <h1>Welcome</h1>
     </div>
     <div class="section1">
         <h2>먼 발걸음 주셔서 감사합니다.</h2>
@@ -219,11 +296,10 @@
     </div>
     <div class="section2">
     </div>
-    <div class="opacityCover">
-    </div>
     <div class="section3">
-        <video src="video/tuna.mov" autoplay muted loop preload="auto">
-        </video>
+        <div class="opacityCover1"></div>
+        <video src="video/tuna.mov" autoplay muted loop preload="auto"></video>
+        <div class="opacityCover2"></div>
     </div>
     <div class="section4">
         <h1>이렇게 팔딱팔딱 뛰는 참치들처럼 거친 바다를 헤엄치는 저희는...</h1>
