@@ -18,14 +18,24 @@
         @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-        * {
-            font-family: "Gothic A1", "Great Vibes", sans-serif;
-            font-weight: 700;
+        @font-face {
+            font-family: 'SokchoBadaDotum';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SokchoBadaDotum.woff2') format('woff2');
+            font-weight: normal;
             font-style: normal;
         }
 
-        .mainBackground {
-
+        * {
+            font-family: 'SokchoBadaDotum', "Gothic A1", "Great Vibes", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+         
+        body {
+            /* background-image: url('https://as1.ftcdn.net/v2/jpg/03/35/70/70/1000_F_335707041_1r78DxaFKGyr2aYq3njPi3U6podF1fbs.jpg'); */
+            background-image: url('https://as1.ftcdn.net/v2/jpg/03/66/17/84/1000_F_366178415_yB8h1b4JHyGpYkJTbI3inG0Zw11pyzKn.jpg');
+            background-repeat: repeat;
+            /* background-size: cover; */
         }
 
         .logo {
@@ -47,7 +57,7 @@
         /* 타이틀 */
         .introtitle,
         .maintitle {
-            height: 70px;
+            height:  100px;
             color: #0a0a11;
             display: flex;
             /*텍스트 중앙정렬*/
@@ -89,28 +99,57 @@
         }
 
 
-        /*인기메뉴*/
-        .hitMenu {
-            width: 1200px;
+        /*메뉴상자*/
+
+        .menuCards{
+
+
+            width: 1400px;
             margin: 50px auto 50px auto;
+            padding: 50px 50px 50px 50px;
+            border-radius: 30px;
 
-
+            background-color: rgba(124, 124, 124, 0.116);
+        
         }
+/* 
+
+        .hitMenu {
+
+            width: 1400px;
+            margin: 50px auto 50px auto;
+            padding: 30px 30px 30px 30px;
+            border-radius: 30px; */
+
+            /* background-color: rgb(9, 0, 129);
+
+
+        } */
 
         .hitMenu>h3 {
-            color: rgb(14, 111, 223);
+            color: rgb(0, 0, 0);
             padding: 3px 3px 3px 5px;
 
 
 
             border-left: 5px solid;
 
-            background-color: rgba(139, 232, 255, 0.3);
+            /* background-color: rgba(139, 232, 255, 0.3); */
         }
 
+        /* 이렇게 하고 버튼 색을 이 색이랑 비슷하게 맞추면 될듯? */
+        /* .MenuCards {
+            border-radius: 30px;
+            background-color: rgba(0, 0, 0, 0.336);
+        } */
+
         .card {
-            margin: 0px 10px 0px 10px;
+            /* margin: 0px 10px 0px 10px; */
+            /* padding: 0px 10px 0px 10px;  */
             border: none;
+
+            /* background-color: rgb(255, 0, 0); */
+            background-color: rgba(255, 0, 0, 0);
         }
 
         /* 아이콘고정시키기 */
@@ -130,16 +169,18 @@
             top: 30px;
         }
 
+
         /* card-img에 태그 새로 씌워서 img에 overflow, radius 제대로 적용 안 되던 문제 해결 */
         .card-img {
             overflow: hidden;
             border-radius: 30px;
 
             width: 100%;
-            height: 280px;
+            height: 310px;
         }
 
-        .card-img-top:hover {
+        .card-img-top:hover,
+        .card-img-middle:hover {
             transform: scale(1.1);
         }
 
@@ -152,6 +193,11 @@
             transition: transform 0.5s;
         }
 
+        /* 이미지 -40%부터 (세로사진용) */
+        .card-img-middle {
+            margin-top: -40%;
+        }
+
         .card-title {
             text-align: center;
             color: black;
@@ -162,14 +208,14 @@
             color: grey;
         }
 
-        .hashtag>.btn{
+        .hashtag>.btn {
             color: white;
             background-color: grey;
         }
 
         .footer {
             text-align: right;
-            background-color: rgba(139, 232, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0);
             height: 90px;
         }
 
@@ -189,10 +235,10 @@
 
         /* 태그버튼 테두리 */
         .btn {
-            opacity: 0.4;
-            border-width : 4px;
-            border-color: white;
-/* btn클래스라서 기본값이 pointer로 돼있음, text로 변경 */
+            
+            /* border-width: 4px; */
+            /* border-color: white; */
+            /* btn클래스라서 기본값이 pointer로 돼있음, text로 변경 */
             cursor: text;
         }
     </style>
@@ -218,329 +264,411 @@
     </div>
 
 
+    <div class="menuCards">
+        <div class="hitMenu">
+            <h3>인기 메뉴</h3>
+            <br />
 
-    <div class="hitMenu">
-        <h3>인기 메뉴</h3>
-        <br />
+            <div class="row row-cols-1 row-cols-md-3 g-3">
 
-        <div id="hitMenuCard" class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img cursorChange" onclick="location.href='detail_nam.html'">
+                            <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2F523700bd-c546-449f-a817-d0d85fa00915%2FKakaoTalk_20240415_124041943.jpg?table=block&id=1bc61850-52a0-4f3a-a011-8adcd1eaeb35&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=&cache=v2"
+                                class="card-img-top" alt="...">
 
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img cursorChange" onclick="location.href='detail_nam.html'">
-                        <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2F523700bd-c546-449f-a817-d0d85fa00915%2FKakaoTalk_20240415_124041943.jpg?table=block&id=1bc61850-52a0-4f3a-a011-8adcd1eaeb35&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=&cache=v2"
-                            class="card-img-top" alt="...">
-
-                    </div>
-
-
-                    <span class="bestIcon">BEST</span>
-
-                    <div class="card-body">
-                        <h5 class="card-title cursorChange" onclick="location.href='detail_nam.html'">김기남</h5>
-                        <p class="card-text">₩ 4,000,000,000,000</p>
-
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #ISTJ</p>
-                            <p class="btn rounded-pill px-1">
-                                #커피</p>
-                            <p class="btn rounded-pill px-1">
-                                #88년생</p>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-
-
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img cursorChange" onclick="location.href='detail_su.html'">
-                        <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2F7eb57c4d-5f07-41ac-aba4-9d81077b8b3c%2FP20211016_145511730_F0A0B874-3B29-45AE-B792-F81777F47BF8.jpg?table=block&id=8f57eb75-01d5-41be-baba-0de548284ec0&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1420&userId=&cache=v2"
-                            class="card-img-top" alt="...">
-                    </div>
-                    <span class="bestIcon">BEST</span>
-                    <div class="card-body">
-                        <h5 class="card-title cursorChange" onclick="location.href='detail_su.html'">김승수</h5>
-                        <p class="card-text">₩ 4,000,000,000,000</p>
-
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #ISFJ</p>
-                            <p class="btn rounded-pill px-1">
-                                #산책</p>
-                            <p class="btn rounded-pill px-1">
-                                #등산</p>
-                        </div>
-                        
-
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img cursorChange" onclick="location.href='detail_yoon.html'">
-                        <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2F6bf79fe0-69c2-4b49-af6c-963107c1734c%2FIMG_1296_2.jpg?table=block&id=0c8b31d2-2207-46f7-8733-c6424cbf3fc9&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1480&userId=&cache=v2"
-                            class="card-img-top" alt="...">
-                    </div>
-                    <span class="bestIcon">BEST</span>
-                    <div class="card-body">
-                        <h5 class="card-title cursorChange" onclick="location.href='detail_yoon.html'">노상윤</h5>
-                        <p class="card-text">₩ 4,000,000,000,000</p>
-
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #ENFP</p>
-                            <p class="btn rounded-pill px-1">
-                                #여행</p>
-                            <p class="btn rounded-pill px-1">
-                                #영화감상</p>
                         </div>
 
-                    </div>
-                </div>
-            </div>
 
+                        <span class="bestIcon">BEST</span>
 
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img" onclick="location.href='detail_jeong.html'" style="cursor: pointer;">
-                        <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2Fcb324cb3-937e-428b-a977-00ff605d2387%2FKakaoTalk_20240415_143147170.jpg?table=block&id=7c527ae4-36c6-47f5-a95a-3ac4bed3b93d&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1920&userId=&cache=v2"
-                            class="card-img-top" alt="...">
-                    </div>
-                    <span class="bestIcon">BEST</span>
-                    <div class="card-body">
-                        <h5 class="card-title cursorChange" onclick="location.href='detail_jeong.html'">문수정</h5>
-                        <p class="card-text">₩ 4,000,000,000,000</p>
+                        <div class="card-body">
+                            <h5 class="card-title cursorChange" onclick="location.href='detail_nam.html'">김기남</h5>
+                            <p class="card-text">₩ 4,000,000,000,000</p>
 
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #INFP</p>
-                            <p class="btn rounded-pill px-1">
-                                #닌텐도</p>
-                            <p class="btn rounded-pill px-1" >
-                                #혼코노</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img cursorChange" onclick="location.href='detail_ri.html'">
-                        <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2Fae9ca9c3-9472-4eb7-837a-bf6f865e5aa4%2FKakaoTalk_20240415_145314954.jpg?table=block&id=74d48208-9e38-4155-ba8d-916884b74693&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1560&userId=&cache=v2"
-                            class="card-img-top" alt="...">
-                    </div>
-                    <span class="bestIcon">BEST</span>
-                    <div class="card-body">
-                        <h5 class="card-title cursorChange" onclick="location.href='detail_ri.html'">유규리</h5>
-                        <p class="card-text">₩ 4,000,000,000,000</p>
-
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #INTP</p>
-                            <p class="btn rounded-pill px-1">
-                                #게임</p>
-                            <p class="btn rounded-pill px-1">
-                                #헬스</p>
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #ISTJ</p>
+                                <p class="btn rounded-pill px-1">
+                                    #커피</p>
+                                <p class="btn rounded-pill px-1">
+                                    #88년생</p>
+                            </div>
                         </div>
 
 
                     </div>
+
                 </div>
+
+
+
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img cursorChange" onclick="location.href='detail_su.html'">
+                            <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2F7eb57c4d-5f07-41ac-aba4-9d81077b8b3c%2FP20211016_145511730_F0A0B874-3B29-45AE-B792-F81777F47BF8.jpg?table=block&id=8f57eb75-01d5-41be-baba-0de548284ec0&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1420&userId=&cache=v2"
+                                class="card-img-top" alt="...">
+                        </div>
+                        <span class="bestIcon">BEST</span>
+                        <div class="card-body">
+                            <h5 class="card-title cursorChange" onclick="location.href='detail_su.html'">김승수</h5>
+                            <p class="card-text">₩ 4,000,000,000,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #ISFJ</p>
+                                <p class="btn rounded-pill px-1">
+                                    #산책</p>
+                                <p class="btn rounded-pill px-1">
+                                    #등산</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img cursorChange" onclick="location.href='detail_yoon.html'">
+                            <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2F6bf79fe0-69c2-4b49-af6c-963107c1734c%2FIMG_1296_2.jpg?table=block&id=0c8b31d2-2207-46f7-8733-c6424cbf3fc9&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1480&userId=&cache=v2"
+                                class="card-img-top card-img-middle" alt="...">
+                        </div>
+                        <span class="bestIcon">BEST</span>
+                        <div class="card-body">
+                            <h5 class="card-title cursorChange" onclick="location.href='detail_yoon.html'">노상윤</h5>
+                            <p class="card-text">₩ 4,000,000,000,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #ENFP</p>
+                                <p class="btn rounded-pill px-1">
+                                    #여행</p>
+                                <p class="btn rounded-pill px-1">
+                                    #영화감상</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img" onclick="location.href='detail_jeong.html'" style="cursor: pointer;">
+                            <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2Fcb324cb3-937e-428b-a977-00ff605d2387%2FKakaoTalk_20240415_143147170.jpg?table=block&id=7c527ae4-36c6-47f5-a95a-3ac4bed3b93d&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1920&userId=&cache=v2"
+                                class="card-img-top" alt="...">
+                        </div>
+                        <span class="bestIcon">BEST</span>
+                        <div class="card-body">
+                            <h5 class="card-title cursorChange" onclick="location.href='detail_jeong.html'">문수정</h5>
+                            <p class="card-text">₩ 4,000,000,000,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #INFP</p>
+                                <p class="btn rounded-pill px-1">
+                                    #닌텐도</p>
+                                <p class="btn rounded-pill px-1">
+                                    #혼코노</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img cursorChange" onclick="location.href='detail_ri.html'">
+                            <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2Fae9ca9c3-9472-4eb7-837a-bf6f865e5aa4%2FKakaoTalk_20240415_145314954.jpg?table=block&id=74d48208-9e38-4155-ba8d-916884b74693&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1560&userId=&cache=v2"
+                                class="card-img-top" alt="...">
+                        </div>
+                        <span class="bestIcon">BEST</span>
+                        <div class="card-body">
+                            <h5 class="card-title cursorChange" onclick="location.href='detail_ri.html'">유규리</h5>
+                            <p class="card-text">₩ 4,000,000,000,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #INTP</p>
+                                <p class="btn rounded-pill px-1">
+                                    #게임</p>
+                                <p class="btn rounded-pill px-1">
+                                    #헬스</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
-
-
-
-
         </div>
-    </div>
 
 
-    <hr>
+        <hr>
 
-    <div class="hitMenu">
-        <h3>사이드 메뉴</h3>
-        <br />
+        <div class="hitMenu">
+            <h3>사이드 메뉴</h3>
+            <br />
 
-        <div id="hitMenuCard" class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="row row-cols-1 row-cols-md-3 g-3">
 
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img">
-                        <img src="https://cdn.pixabay.com/photo/2023/11/12/17/10/ai-generated-8383630_1280.jpg"
-                            class="card-img-top" alt="...">
-                    </div>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">참다랑어회 大</h5>
-                        <p class="card-text">₩ 65,000</p>
-
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #팔딱팔딱</p>
-                            <p class="btn rounded-pill px-1">
-                                #갓잡아올린</p>
-                            <p class="btn rounded-pill px-1" >
-                                #참치</p>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img">
+                            <img src="https://cdn.pixabay.com/photo/2023/11/12/17/10/ai-generated-8383630_1280.jpg"
+                                class="card-img-top" alt="...">
                         </div>
 
+                        <div class="card-body">
+                            <h5 class="card-title">참다랑어회 大</h5>
+                            <p class="card-text">₩ 65,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #팔딱팔딱</p>
+                                <p class="btn rounded-pill px-1">
+                                    #갓잡아올린</p>
+                                <p class="btn rounded-pill px-1">
+                                    #참치</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1562513735-c317823fbca9?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            class="card-img-top" alt="...">
-                    </div>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">참다랑어회 大</h5>
-                        <p class="card-text">₩ 65,000</p>
-
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #팔딱팔딱</p>
-                            <p class="btn rounded-pill px-1">
-                                #갓잡아올린</p>
-                            <p class="btn rounded-pill px-1" >
-                                #참치</p>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1562513735-c317823fbca9?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top card-img-middle" alt="...">
                         </div>
 
+                        <div class="card-body">
+                            <h5 class="card-title">참다랑어회 大</h5>
+                            <p class="card-text">₩ 65,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #팔딱팔딱</p>
+                                <p class="btn rounded-pill px-1">
+                                    #갓잡아올린</p>
+                                <p class="btn rounded-pill px-1">
+                                    #참치</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img">
-                        <img src="https://cdn.pixabay.com/photo/2022/07/25/16/03/sushi-7344102_960_720.jpg"
-                            class="card-img-top" alt="...">
-                    </div>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">최고급 캐비아 500g</h5>
-                        <p class="card-text">₩ 3,150,000</p>
-
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #3대진미</p>
-                            <p class="btn rounded-pill px-1">
-                                #철갑상어알</p>
-                            <p class="btn rounded-pill px-1" >
-                                #특별한날</p>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img">
+                            <img src="https://cdn.pixabay.com/photo/2022/07/25/16/03/sushi-7344102_960_720.jpg"
+                                class="card-img-top " alt="...">
                         </div>
 
+                        <div class="card-body">
+                            <h5 class="card-title">최고급 캐비아 500g</h5>
+                            <p class="card-text">₩ 3,150,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #3대진미</p>
+                                <p class="btn rounded-pill px-1">
+                                    #철갑상어알</p>
+                                <p class="btn rounded-pill px-1">
+                                    #특별한날</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img">
-                        <img src="https://images.pexels.com/photos/8951295/pexels-photo-8951295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            class="card-img-top" alt="...">
-                    </div>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">최고급 캐비아 500g</h5>
-                        <p class="card-text">₩ 3,150,000</p>
-
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #3대진미</p>
-                            <p class="btn rounded-pill px-1">
-                                #철갑상어알</p>
-                            <p class="btn rounded-pill px-1" >
-                                #특별한날</p>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img">
+                            <img src="https://images.pexels.com/photos/8951295/pexels-photo-8951295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                class="card-img-top card-img-middle" alt="...">
                         </div>
 
+                        <div class="card-body">
+                            <h5 class="card-title">최고급 캐비아 500g</h5>
+                            <p class="card-text">₩ 3,150,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #3대진미</p>
+                                <p class="btn rounded-pill px-1">
+                                    #철갑상어알</p>
+                                <p class="btn rounded-pill px-1">
+                                    #특별한날</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img">
-                        <img src="https://images.pexels.com/photos/8112404/pexels-photo-8112404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            class="card-img-top" alt="...">
-                    </div>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">최고급 캐비아 500g</h5>
-                        <p class="card-text">₩ 3,150,000</p>
-
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #세계</p>
-                            <p class="btn rounded-pill px-1">
-                                #3대진미</p>
-                            <p class="btn rounded-pill px-1" >
-                                #철갑상어알</p>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img">
+                            <img src="https://images.pexels.com/photos/8112404/pexels-photo-8112404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                class="card-img-top card-img-middle" alt="...">
                         </div>
 
+                        <div class="card-body">
+                            <h5 class="card-title">최고급 캐비아 500g</h5>
+                            <p class="card-text">₩ 3,150,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #세계</p>
+                                <p class="btn rounded-pill px-1">
+                                    #3대진미</p>
+                                <p class="btn rounded-pill px-1">
+                                    #철갑상어알</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
 
 
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-img">
-                        <img src="https://media.istockphoto.com/id/1738964078/ko/%EC%82%AC%EC%A7%84/%EA%B2%8C%EC%82%B4%EC%9D%84-%EA%B3%81%EB%93%A4%EC%9D%B8-%EC%83%81%EC%96%B4-%EC%A7%80%EB%8A%90%EB%9F%AC%EB%AF%B8-%EC%88%98%ED%94%84.jpg?s=612x612&w=is&k=20&c=2DwonWFC45Yl3xYDHwsxNRnfIUxc3CLZdSMOUe3F_bU="
-                            class="card-img-top" alt="...">
-                    </div>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">샥스핀</h5>
-                        <p class="card-text">₩ 3,150,000</p>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img">
+                            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDAyMDNfOTMg%2FMDAxNTgwNjg3MjgyODA1.NQqFM_0POcq2uLsiotAB0GGhGBM4VHMr-uFBVvKkxe8g.ikl32UQ3sKI04uBZZh7RrV58lKEX0jh-U53qwvYe6dsg.JPEG.pagodastar%2F51e58fe634b414654ff66b0421094338dbad8868ea0f185d0b6d08fadc02fe1fcc2a5d7577d3.jpg&type=sc960_832"
+                                class="card-img-top " alt="...">
+                        </div>
 
-                        <!-- 태그는 짧은 글자로 세 개까지! -->
-                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
-                            <p class="btn rounded-pill px-1">
-                                #상어</p>
-                            <p class="btn rounded-pill px-1">
-                                #지느러미</p>
-                            <!-- <p class="btn rounded-pill px-1" >
+                        <div class="card-body">
+                            <h5 class="card-title">샥스핀 1kg</h5>
+                            <p class="card-text">₩ 200,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #상어</p>
+                                <p class="btn rounded-pill px-1">
+                                    #지느러미</p>
+                                <!-- <p class="btn rounded-pill px-1" >
                                 #특별한날</p> -->
-                        </div>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
+
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1702382116645-e93f30e25626?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top" alt="...">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">샥스핀 1kg</h5>
+                            <p class="card-text">₩ 200,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #상어</p>
+                                <p class="btn rounded-pill px-1">
+                                    #지느러미</p>
+                                <!-- <p class="btn rounded-pill px-1" >
+                                #특별한날</p> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1559814048-149b70765d47?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="card-img-top card-img-middle" alt="...">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">랍스터 1kg</h5>
+                            <p class="card-text">₩ 75,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #</p>
+                                <p class="btn rounded-pill px-1">
+                                    #</p>
+                                <!-- <p class="btn rounded-pill px-1" >
+                                #특별한날</p> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img">
+                            <img src="https://images.pexels.com/photos/19503820/pexels-photo-19503820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                class="card-img-top card-img-middle" alt="...">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">랍스터 1kg</h5>
+                            <p class="card-text">₩ 75,000</p>
+
+                            <!-- 태그는 짧은 글자로 세 개까지! -->
+                            <div class="hashtag row row-cols-1 row-cols-md-4 g-0 gap-1 justify-content-center">
+                                <p class="btn rounded-pill px-1">
+                                    #</p>
+                                <p class="btn rounded-pill px-1">
+                                    #</p>
+                                <!-- <p class="btn rounded-pill px-1" >
+                                #특별한날</p> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
             </div>
-
-
-  
-
-
-            
-
-
         </div>
     </div>
 
