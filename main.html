@@ -25,7 +25,8 @@
         }
 
         .mainBackground {
-
+            background-image: url('');
+            background-repeat: repeat;
         }
 
         .logo {
@@ -130,16 +131,18 @@
             top: 30px;
         }
 
+
         /* card-img에 태그 새로 씌워서 img에 overflow, radius 제대로 적용 안 되던 문제 해결 */
         .card-img {
-            overflow: hidden;
+            overflow: hidden; 
             border-radius: 30px;
 
             width: 100%;
             height: 280px;
         }
 
-        .card-img-top:hover {
+        .card-img-top:hover,
+        .card-img-middle:hover {
             transform: scale(1.1);
         }
 
@@ -152,6 +155,24 @@
             transition: transform 0.5s;
         }
 
+        /* 이미지 세로 고정 */
+        .card-img-middle {
+
+            overflow: hidden;
+            background-position: bottom bottom;
+            background-size: cover;
+            /* 시간차변화 */
+            transition: transform 0.5s;
+
+            
+           
+            margin-top: -50%;
+
+            
+
+
+        }
+
         .card-title {
             text-align: center;
             color: black;
@@ -162,7 +183,7 @@
             color: grey;
         }
 
-        .hashtag>.btn{
+        .hashtag>.btn {
             color: white;
             background-color: grey;
         }
@@ -190,9 +211,9 @@
         /* 태그버튼 테두리 */
         .btn {
             opacity: 0.4;
-            border-width : 4px;
+            border-width: 4px;
             border-color: white;
-/* btn클래스라서 기본값이 pointer로 돼있음, text로 변경 */
+            /* btn클래스라서 기본값이 pointer로 돼있음, text로 변경 */
             cursor: text;
         }
     </style>
@@ -279,7 +300,7 @@
                             <p class="btn rounded-pill px-1">
                                 #등산</p>
                         </div>
-                        
+
 
                     </div>
                 </div>
@@ -290,7 +311,7 @@
                 <div class="card h-100">
                     <div class="card-img cursorChange" onclick="location.href='detail_yoon.html'">
                         <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2F6bf79fe0-69c2-4b49-af6c-963107c1734c%2FIMG_1296_2.jpg?table=block&id=0c8b31d2-2207-46f7-8733-c6424cbf3fc9&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1480&userId=&cache=v2"
-                            class="card-img-top" alt="...">
+                            class="card-img-top card-img-middle" alt="...">
                     </div>
                     <span class="bestIcon">BEST</span>
                     <div class="card-body">
@@ -329,7 +350,7 @@
                                 #INFP</p>
                             <p class="btn rounded-pill px-1">
                                 #닌텐도</p>
-                            <p class="btn rounded-pill px-1" >
+                            <p class="btn rounded-pill px-1">
                                 #혼코노</p>
                         </div>
 
@@ -385,7 +406,7 @@
                         <img src="https://cdn.pixabay.com/photo/2023/11/12/17/10/ai-generated-8383630_1280.jpg"
                             class="card-img-top" alt="...">
                     </div>
-                    
+
                     <div class="card-body">
                         <h5 class="card-title">참다랑어회 大</h5>
                         <p class="card-text">₩ 65,000</p>
@@ -396,7 +417,7 @@
                                 #팔딱팔딱</p>
                             <p class="btn rounded-pill px-1">
                                 #갓잡아올린</p>
-                            <p class="btn rounded-pill px-1" >
+                            <p class="btn rounded-pill px-1">
                                 #참치</p>
                         </div>
 
@@ -410,7 +431,7 @@
                         <img src="https://images.unsplash.com/photo-1562513735-c317823fbca9?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             class="card-img-top" alt="...">
                     </div>
-                    
+
                     <div class="card-body">
                         <h5 class="card-title">참다랑어회 大</h5>
                         <p class="card-text">₩ 65,000</p>
@@ -421,7 +442,7 @@
                                 #팔딱팔딱</p>
                             <p class="btn rounded-pill px-1">
                                 #갓잡아올린</p>
-                            <p class="btn rounded-pill px-1" >
+                            <p class="btn rounded-pill px-1">
                                 #참치</p>
                         </div>
 
@@ -436,7 +457,7 @@
                         <img src="https://cdn.pixabay.com/photo/2022/07/25/16/03/sushi-7344102_960_720.jpg"
                             class="card-img-top" alt="...">
                     </div>
-                    
+
                     <div class="card-body">
                         <h5 class="card-title">최고급 캐비아 500g</h5>
                         <p class="card-text">₩ 3,150,000</p>
@@ -447,7 +468,7 @@
                                 #3대진미</p>
                             <p class="btn rounded-pill px-1">
                                 #철갑상어알</p>
-                            <p class="btn rounded-pill px-1" >
+                            <p class="btn rounded-pill px-1">
                                 #특별한날</p>
                         </div>
 
@@ -461,7 +482,7 @@
                         <img src="https://images.pexels.com/photos/8951295/pexels-photo-8951295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                             class="card-img-top" alt="...">
                     </div>
-                    
+
                     <div class="card-body">
                         <h5 class="card-title">최고급 캐비아 500g</h5>
                         <p class="card-text">₩ 3,150,000</p>
@@ -472,7 +493,7 @@
                                 #3대진미</p>
                             <p class="btn rounded-pill px-1">
                                 #철갑상어알</p>
-                            <p class="btn rounded-pill px-1" >
+                            <p class="btn rounded-pill px-1">
                                 #특별한날</p>
                         </div>
 
@@ -487,7 +508,7 @@
                         <img src="https://images.pexels.com/photos/8112404/pexels-photo-8112404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                             class="card-img-top" alt="...">
                     </div>
-                    
+
                     <div class="card-body">
                         <h5 class="card-title">최고급 캐비아 500g</h5>
                         <p class="card-text">₩ 3,150,000</p>
@@ -498,7 +519,7 @@
                                 #세계</p>
                             <p class="btn rounded-pill px-1">
                                 #3대진미</p>
-                            <p class="btn rounded-pill px-1" >
+                            <p class="btn rounded-pill px-1">
                                 #철갑상어알</p>
                         </div>
 
@@ -512,13 +533,13 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="card-img">
-                        <img src="https://media.istockphoto.com/id/1738964078/ko/%EC%82%AC%EC%A7%84/%EA%B2%8C%EC%82%B4%EC%9D%84-%EA%B3%81%EB%93%A4%EC%9D%B8-%EC%83%81%EC%96%B4-%EC%A7%80%EB%8A%90%EB%9F%AC%EB%AF%B8-%EC%88%98%ED%94%84.jpg?s=612x612&w=is&k=20&c=2DwonWFC45Yl3xYDHwsxNRnfIUxc3CLZdSMOUe3F_bU="
+                        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDAyMDNfOTMg%2FMDAxNTgwNjg3MjgyODA1.NQqFM_0POcq2uLsiotAB0GGhGBM4VHMr-uFBVvKkxe8g.ikl32UQ3sKI04uBZZh7RrV58lKEX0jh-U53qwvYe6dsg.JPEG.pagodastar%2F51e58fe634b414654ff66b0421094338dbad8868ea0f185d0b6d08fadc02fe1fcc2a5d7577d3.jpg&type=sc960_832"
                             class="card-img-top" alt="...">
                     </div>
-                    
+
                     <div class="card-body">
-                        <h5 class="card-title">샥스핀</h5>
-                        <p class="card-text">₩ 3,150,000</p>
+                        <h5 class="card-title">샥스핀 1kg</h5>
+                        <p class="card-text">₩ 200,000</p>
 
                         <!-- 태그는 짧은 글자로 세 개까지! -->
                         <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
@@ -535,10 +556,36 @@
             </div>
 
 
-  
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1702382116645-e93f30e25626?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="card-img-top" alt="...">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">샥스핀 1kg</h5>
+                        <p class="card-text">₩ 200,000</p>
+
+                        <!-- 태그는 짧은 글자로 세 개까지! -->
+                        <div class="hashtag row row-cols-1 row-cols-md-3 g-0 gap-0 justify-content-center">
+                            <p class="btn rounded-pill px-1">
+                                #상어</p>
+                            <p class="btn rounded-pill px-1">
+                                #지느러미</p>
+                            <!-- <p class="btn rounded-pill px-1" >
+                                #특별한날</p> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
 
-            
+
+
+
+
 
 
         </div>
