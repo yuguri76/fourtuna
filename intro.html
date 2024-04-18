@@ -142,11 +142,21 @@
                 transition: opacity 2s ease-in-out, transform 2s ease;
             }
             
-            .section1 span {
-                margin: 0px 0px 0px 80px;
+            .sec_span {
+                margin: 150px 0px 0px 65px;
             }
 
-            .section1 h1, h3 {
+            .section1 h1 {
+                font-size: 45px;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 1.5s ease forwards;
+                line-height: 3rem;
+                transition: transform 2s ease-in-out;
+            }
+
+            .section1 h3 {
+                font-size: 35px;
                 opacity: 0;
                 transform: translateY(20px);
                 animation: fadeInUp 1.5s ease forwards;
@@ -410,7 +420,6 @@
                 padding-left: 80px; 
             }  */
             
-
             .section6 {
                 position: relative; 
                 width: 100%;
@@ -449,9 +458,9 @@
             }
 
             .section7 {
-                margin-top: 100px;
+                margin-top: 120px;
                 width: 100%;
-                max-height: 100vh;
+                height: 120vh;
                 background-image: url('./image/promise_03.jpeg');
                 background-size: 100% auto; 
                 background-position: center;
@@ -489,30 +498,31 @@
 
             .section7 h1:nth-child(1) {
                 animation-delay: 1s;
-                margin-bottom: 5rem;
+                margin-bottom: 6rem;
             }
 
             .section7 h1:nth-child(2) {
                 animation-delay: 2s;
+                margin-bottom: 1rem;
             }
 
             .section7 h1:nth-child(3) {
                 animation-delay: 4s;
+                margin-bottom: 1rem;
             }
 
             .section7 h1:nth-child(4) {
                 animation-delay: 6s;
+                margin-bottom: 1rem;
             }
 
             .section7 h1:nth-child(5) {
                 animation-delay: 8s;
             }
 
-
             .section8 {
                 position: relative;
                 margin-top: 90px;
-                margin-bottom: 90px;
                 width: 100%;
                 height: 80vh;
                 background-image: url('./image/tuna01.jpeg');
@@ -524,6 +534,17 @@
                 justify-content: center;
                 text-align: center;
                 color: rgb(0, 0, 0);
+            }
+
+            .section8 h1 {
+                font-size: 80px; 
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 1.5s ease forwards;
+                line-height: 3rem;
+                transition: transform 2s ease-in-out;
+                animation-delay: 1s; 
+                margin:0 700px 200px 0;
             }
 
             .section8::before {
@@ -548,11 +569,6 @@
                 z-index: 1;
             }
 
-            .section8 h1 {
-                margin-right: 300px;
-            }
-
-
             .overlay-image {
                 position: absolute;
                 top: 150px;
@@ -569,6 +585,46 @@
                 width: 120%; 
                 height: auto;
                 opacity: 1;
+            }
+
+            .highlight {
+                background-color: red; 
+                border-radius: 10px; 
+                color: rgb(0, 0, 0);
+                padding: 2px 4px 0 4px;
+                margin: 2px;
+            }
+            
+            .bounce {
+                position: absolute;
+                bottom: 20%; 
+                left: 50%; 
+                transform: translateX(-50%);
+                animation: bouncing 2s infinite; 
+                width: 100px; 
+                height: auto; 
+            }
+
+            @keyframes bouncing {
+                0%, 20%, 50%, 80%, 100% {
+                    transform: translateX(-50%) translateY(0);
+                }
+                40% {
+                    transform: translateX(-50%) translateY(-20px);
+                }
+                60% {
+                    transform: translateX(-50%) translateY(-10px);
+                }
+            }
+
+            .line {
+                display: block;
+                margin-top: 18px; 
+                margin-bottom: 5px; 
+            }
+
+            .line:first-child {
+                margin-top: 100px;
             }
             /* End Sangyoon's Style */
         </style>
@@ -613,15 +669,14 @@
 
         <div class="opaciture main_container"></div>
         <div class="opaciture section1">
-            <span>
-                <h1>럭셔리 참치 전문 레스토랑 4조참치에 오신것을 환영합니다.</h2>
-                <h3>
-                    <br/>거친 파도처럼 숨가쁘게 돌아가는 바쁜 일상 속,
-                    <br/>맛있는 음식과 고급와인, 분위기 좋은 음악을 듣는 편안한 휴식을 꿈꾸셨다면,
-                    <br/>저희 4조참치가 찾아오신 여러분들께 최고의 경험을 선사해드리겠습니다.
-                </h3>
-            </span>
-            
+            <span class="sec_span">
+                <h1>럭셔리 참치 전문 레스토랑 <span class="highlight">4조</span>참치에 오신것을 환영합니다.</h2>
+                    <h3>
+                        <span class="line">거친 파도처럼 숨가쁘게 돌아가는 바쁜 일상 속,</span>
+                        <span class="line">맛있는 음식과 고급와인, 분위기 좋은 음악을 듣는 편안한 휴식을 꿈꾸셨다면,</span>
+                        <span class="line">저희를 찾아오신 여러분들께 최고의 경험을 선사해드리겠습니다.</span>
+                    </h3>                    
+            </span> 
         </div>
 
         <div class="opacifalse section2"></div>
@@ -650,18 +705,19 @@
         
     
         <div class="opacitrue section7">
-            <h1>사조참치는 약속합니다.</h1>
-            <h1>하나, 지각하지 않습니다.</h1>
-            <h1>둘,</h1>
-            <h1>셋,</h1>
-            <h1>넷,</h1>
+            <h1><img src="./image/4조참치_2트.png" alt="4조참치 로고">는 약속합니다.</h1>
+            <h1>하나, 적극적으로 소통합니다.</h1>
+            <h1>둘, 자신의 일을 끝까지 책임지고 수행합니다.</h1>
+            <h1>셋, 서로 존중합니다.</h1>
+            <h1>넷, 절대 결석, 지각하지 않습니다.</h1>
         </div>
         
 
         <div class="opacitrue section8">
-            <h1>준비된 사조참치 보러가기</h1>
+            <h1>준비된 <span class="highlight">4조</span>참치 보러가기</h1>
+            <img src="./image/arrow.png" alt="arrow" class="bounce" />
         </div>
-
+        
     </body>
 
 </html>
