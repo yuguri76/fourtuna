@@ -37,28 +37,26 @@
         }
 
         body {
+
+
             background-image: url('image/menu_back.jpeg');
             background-repeat: repeat;
             background-size: auto;
-
-            /* 75%용!!!!!!!!!!!! */
-            /* max-height: 2200px; */
-
         }
 
-        .logo {
-            width: 100px;
-            height: 40px;
-
-            padding-top: 3 px;
-            padding-left: 1 px;
+        .top_logo {
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            z-index: 1000;
+            height: 120px;
         }
 
-        .logoImage {
-            background-position: center center;
-            background-size: cover;
-            width: 100%;
-            height: 100%;
+        .top_logo img {
+            width: 300px;
+            /* 로고 이미지의 너비 */
+            height: auto;
+            /* 이미지의 원본 비율 유지 */
         }
 
         /* 타이틀 */
@@ -86,7 +84,7 @@
         } */
 
         .maintitle>h1:hover {
-            color: rgb(14, 111, 223);
+            color: rgb(16, 80, 183);
         }
 
         .cursorChange {
@@ -97,24 +95,28 @@
         .menuCards {
             width: 1400px;
             margin: 50px auto 50px auto;
-            padding: 50px 50px 50px 50px;
+            padding: 10px 50px 50px 50px;
             border-radius: 30px;
 
             background-color: rgba(124, 124, 124, 0.116);
+            /* background-image: linear-gradient(rgba(178, 224, 234, 0.342) 8%, rgba(255, 249, 249, 0.336) 22% 78%, rgba(0, 25, 89, 0.302) 92% 100%); */
 
-
-            /* 지금까지 모르고 75%배율에서 작업을 해봐서.. 이 크기 어떤지 봐주세요!!!!! */
-            transform: scale(0.75);
-            transform-origin:top;
         }
 
-        .hitMenu>h3 {
-            color: rgb(0, 0, 0);
-            padding: 3px 3px 3px 5px;
+        .hitMenu {
+            margin-top: 40px;
+        }
 
+        .hitMenu>h3>span {
+            color: rgb(0, 0, 0);
+
+
+            padding: 10px;
             border-left: 5px solid;
 
-            /* background-color: rgba(139, 232, 255, 0.3); */
+            background-color: rgb(116, 162, 236);
+            box-shadow: 2px 2px 2px 2px rgb(194, 194, 194);
+
         }
 
         .card {
@@ -125,7 +127,7 @@
 
         /* 아이콘고정시키기 */
         .bestIcon {
-            background-color: rgb(96, 109, 230);
+            background-color: rgb(16, 80, 183);
             width: 80px;
             height: 40px;
 
@@ -186,11 +188,11 @@
             font-family: 'WavvePADO-Regular';
         }
 
-        /* .footer {
+        .footer {
             text-align: right;
             background-color: rgba(255, 0, 0, 0);
             height: 90px;
-        } */
+        }
 
         .row {
             animation: fadein 1s;
@@ -214,22 +216,22 @@
 
 <body>
     <div class="mainBackground"></div>
-    <div class="logo">
-        <img class="logoImage cursorChange" onclick="location.href='intro.html'"
-            src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2F411868d5-32a5-4a27-9d92-2d8767e8f430%2FUntitled.png?table=block&id=bac55425-c72d-46dc-a009-b7605abc1b34&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=d7ef0868-ed79-4d87-aa6a-2180b6ad46eb&cache=v2">
+
+    <div class="opaciture top_logo">
+        <img class="cursorChange" onclick="location.href='intro.html'" src="image/4조참치_2트.png" alt="4조참치 로고">
     </div>
     <div class="header">
         <!-- <div class="introtitle">
             <h5 class="cursorChange" onclick="location.href='intro.html'">Intro</h5>
         </div> -->
         <div class="maintitle">
-            <h1>메뉴판</h1>
+            <h1 class="cursorChange" onclick="location.href='main.html'">메뉴판</h1>
         </div>
     </div>
 
     <div class="menuCards">
         <div class="hitMenu">
-            <h3>인기 메뉴</h3>
+            <h3><span>인기 메뉴</span></h3>
             <br />
 
             <div class="row row-cols-1 row-cols-md-3 g-3">
@@ -360,8 +362,9 @@
 
         <hr>
 
+
         <div class="hitMenu">
-            <h3>사이드 메뉴</h3>
+            <h3><span>사이드 메뉴</span></h3>
             <br />
 
             <div class="row row-cols-1 row-cols-md-3 g-3">
@@ -482,11 +485,10 @@
         </div>
     </div>
 
-    <!-- <footer class="footer mt-auto py-3 bg-body-tertiary">
+    <footer class="footer mt-auto py-3 bg-body-tertiary">
         <div class="container">
-            <span class="text-body-secondary">4조참치</span>
         </div>
-    </footer> -->
+    </footer>
 </body>
 
 </html>
