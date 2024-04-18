@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4조참치 메뉴판</title>
+    <title>다이닝 4조참치 메뉴판</title>
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,9 +13,6 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
         @font-face {
             font-family: 'SokchoBadaDotum';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SokchoBadaDotum.woff2') format('woff2');
@@ -31,14 +28,12 @@
         }
 
         * {
-            font-family: 'SokchoBadaDotum', "Gothic A1", "Great Vibes", sans-serif;
+            font-family: 'SokchoBadaDotum', sans-serif;
             font-weight: 700;
             font-style: normal;
         }
 
         body {
-
-
             background-image: url('image/menu_back.jpeg');
             background-repeat: repeat;
             background-size: auto;
@@ -54,9 +49,7 @@
 
         .top_logo img {
             width: 300px;
-            /* 로고 이미지의 너비 */
             height: auto;
-            /* 이미지의 원본 비율 유지 */
         }
 
         /* 타이틀 */
@@ -67,21 +60,14 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-
             margin-top: 80px;
             margin-bottom: 100px;
         }
 
-        /*가상클래스 - 커서 올리면 색깔 바뀌도록*/
-        /* .introtitle>h5, */
         .maintitle>h1 {
             transition-property: color;
             transition-duration: 0.3s;
         }
-
-        /* .introtitle>h5:hover {
-            color: grey;
-        } */
 
         .maintitle>h1:hover {
             color: rgb(16, 80, 183);
@@ -97,10 +83,7 @@
             margin: 50px auto 50px auto;
             padding: 10px 50px 50px 50px;
             border-radius: 30px;
-
             background-color: rgba(124, 124, 124, 0.116);
-            /* background-image: linear-gradient(rgba(178, 224, 234, 0.342) 8%, rgba(255, 249, 249, 0.336) 22% 78%, rgba(0, 25, 89, 0.302) 92% 100%); */
-
         }
 
         .hitMenu {
@@ -109,44 +92,36 @@
 
         .hitMenu>h3>span {
             color: rgb(0, 0, 0);
-
-
             padding: 10px;
             border-left: 5px solid;
-
             background-color: rgb(116, 162, 236);
             box-shadow: 2px 2px 2px 2px rgb(194, 194, 194);
-
         }
 
+        /* 카드 투명배경 */
         .card {
             border: none;
-            /* background-color: rgb(255, 0, 0); */
             background-color: rgba(255, 0, 0, 0);
         }
 
         /* 아이콘고정시키기 */
         .bestIcon {
             background-color: rgb(16, 80, 183);
+            color: white;
             width: 80px;
             height: 40px;
-
-            color: white;
-
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-
             position: absolute;
             top: 30px;
         }
 
-        /* card-img에 태그 새로 씌워서 img에 overflow, radius 제대로 적용 안 되던 문제 해결 */
+        /* 사진 overflow*/
         .card-img {
             overflow: hidden;
             border-radius: 30px;
-
             width: 100%;
             max-height: 310px;
         }
@@ -157,11 +132,21 @@
         }
 
         .card-img-top {
-
-            overflow: hidden;
-            background-position: center center;
-            background-size: cover;
             transition: transform 0.5s;
+        }
+
+        .row {
+            animation: fadein 1s;
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* 이미지 -40%부터 (세로사진용) */
@@ -182,30 +167,12 @@
         .hashtag>.btn {
             color: white;
             background-color: grey;
-
             cursor: text;
-
             font-family: 'WavvePADO-Regular';
         }
 
         .footer {
-            text-align: right;
-            background-color: rgba(255, 0, 0, 0);
             height: 90px;
-        }
-
-        .row {
-            animation: fadein 1s;
-        }
-
-        @keyframes fadein {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
         }
     </style>
 
@@ -221,9 +188,6 @@
         <img class="cursorChange" onclick="location.href='intro.html'" src="image/4조참치_2트.png" alt="4조참치 로고">
     </div>
     <div class="header">
-        <!-- <div class="introtitle">
-            <h5 class="cursorChange" onclick="location.href='intro.html'">Intro</h5>
-        </div> -->
         <div class="maintitle">
             <h1 class="cursorChange" onclick="location.href='main.html'">메뉴판</h1>
         </div>
