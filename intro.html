@@ -55,29 +55,18 @@
                 height: 100vh;
             } 
 
-            /* 
-            .opaciture {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-                color: black;
-                text-align: center;
-                opacity: 0;
-                transition: all 2s;
-                height: 100vh;
-            } 
+            .top_logo {
+                position: absolute; 
+                top: 20px;
+                left: 50px; 
+                z-index: 1000; 
+                height: 120px;
+            }
 
-            .opaciflase {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-                color: black;
-                text-align: center;
-                opacity: 0;
-                transition: all 2s;
-                height: 100vh;
-            }  */
-            
+            .top_logo img {
+                width: 300px; /* 로고 이미지의 너비 */
+                height: auto; /* 이미지의 원본 비율 유지 */
+            }
 
             .top-text {
                 position: absolute;
@@ -89,46 +78,6 @@
                 transition: opacity 2s ease-in-out;
             }
 
-            /* .logo {
-                width: 200px;
-                height: auto;
-                margin: 30px;
-            }
-
-            .section1 {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                color: black;
-                text-align: left;
-                height: 100vh;
-                width: 100vw;
-                background: linear-gradient(white 60vh, rgb(178, 224, 234) 100%);
-                margin-top: -5vh;
-                opacity: 1;
-                transition: opacity 2s ease-in-out, transform 2s ease;
-            }
-
-            .section1 h2 {
-                opacity: 0;
-                transform: translateY(20px);
-                animation: fadeInUp 1.5s ease forwards;
-                line-height: 4rem;
-                transition: transform 2s ease-in-out;
-            }
-
-            .section1 h2:nth-child(1) {
-                animation-delay: 1s;
-            }
-
-            .section1 h2:nth-child(2) {
-                animation-delay: 3s;
-                margin-bottom: 5rem;
-            } */
-
-            /* Start Sangyoon's Style */
-            
             .section1 {
                 display: flex;
                 flex-direction: column;
@@ -147,6 +96,7 @@
             }
 
             .section1 h1 {
+                margin-left: 0px;
                 font-size: 45px;
                 opacity: 0;
                 transform: translateY(20px);
@@ -172,8 +122,6 @@
                 animation-delay: 3s;
                 margin-bottom: 8rem;
             }
-            /* End Sangyoon's Style */
-
 
             .section1 img {
                 opacity: 0;
@@ -213,12 +161,6 @@
                 opacity: 1;
             }
 
-            .section3 {
-                height: 100vh;
-                overflow: hidden;
-                position: relative;
-            }
-
             .opacityCover1 {
                 position: absolute;
                 align-self: flex-start;
@@ -235,6 +177,12 @@
                 height: 300px;
                 z-index: 20;
                 background: linear-gradient(to top, rgba(0, 25, 89, 1), rgba(0, 25, 89, 1) 10%, rgba(0, 25, 89, 0));
+            }
+
+            .section3 {
+                height: 100vh;
+                overflow: hidden;
+                position: relative;
             }
 
             .section3 video {
@@ -292,74 +240,6 @@
                 overflow: hidden;
             }
 
-            .background_1 {
-                position: absolute;
-                /* background-image: url("image/4조참치.png"); */
-                z-index: -1;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: contain;
-                opacity: 0;
-                height: 100%;
-                width: 100%;
-                transition-delay: 10ms;
-                transition-duration: 4s;
-            }
-
-            .wrapper {
-                width: 1158px;
-                height: 357px;
-                opacity: 1;
-                background-image: url("src/background/Fake.PNG");
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            .last1 {
-                width: 360px;
-                height: 269px;
-                opacity: 1;
-                background-image: url("src/background/hahaha.jpg");
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            /* Start Sangyoon's Style */
-            .main_container {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 60vh; 
-                background-image: linear-gradient(to bottom, rgba(255,255,255,0) 50%, white 100%), url('./image/tuna01.jpeg');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-            
-            .video-container {
-                height: 100vh; 
-                overflow: hidden; 
-            }
-
-            .top_logo {
-                position: absolute; 
-                top: 20px;
-                left: 50px; 
-                z-index: 1000; 
-                height: 120px;
-            }
-
-            .top_logo img {
-                width: 300px; /* 로고 이미지의 너비 */
-                height: auto; /* 이미지의 원본 비율 유지 */
-            }
-            .section1 {
-                margin-left: 0px;
-            }
-
             .section4 {
                 display: flex;
                 flex-direction: column;
@@ -406,20 +286,6 @@
                 animation-delay: 4s;
             }
 
-            /* .section5 {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center; 
-                color: rgb(0, 0, 0);
-                text-align: center; 
-                height: 60vh;
-                background: linear-gradient(white 60vh, rgb(178, 224, 234) 100%);
-                opacity: 1;
-                transition: opacity 2s ease-in-out, transform 2s ease;
-                padding-left: 80px; 
-            }  */
-            
             .section6 {
                 position: relative; 
                 width: 100%;
@@ -462,16 +328,16 @@
                 width: 100%;
                 height: 120vh;
                 background-image: url('./image/promise_03.jpeg');
-                background-size: 100% auto; 
+                background-size: 100% auto;
                 background-position: center;
                 background-repeat: no-repeat;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                text-align: center;
+                text-align: left; /* 텍스트를 왼쪽으로 정렬 */
                 color: rgb(1, 1, 1);
-                flex-direction: column; 
-                padding: 0 20px; 
+                flex-direction: column;
+                padding: 0 20px;
             }
 
             .section7 h1 {
@@ -480,13 +346,24 @@
                 animation: fadeInUp 1.5s ease forwards;
                 line-height: 3rem;
                 transition: transform 2s ease-in-out;
-                margin-right: 20px; 
+                text-align: left; /* 텍스트 왼쪽 정렬 */
+                width: 80%; /* 적당한 너비 설정 */
+                max-width: 960px; /* 최대 너비 설정 */
+                margin: 0 auto; /* 자동 마진을 통해 가운데 정렬 */
+                padding-left: 0; /* 필요 없는 왼쪽 패딩 제거 */
             }
 
-            .section7 h1:last-child {
-                margin-right: 0; /* 마지막 h1 태그의 오른쪽 간격 제거 */
-            }
 
+            .section7 h1 {
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 1.5s ease forwards;
+                line-height: 3rem;
+                transition: transform 2s ease-in-out;
+                text-align: left; /* 모든 h1 태그를 왼쪽 정렬로 설정 */
+                width: 100%; /* 전체 너비를 사용하도록 설정 */
+                padding-left: 20px; /* 왼쪽 패딩을 추가하여 내용이 완전히 왼쪽에 붙지 않도록 함 */
+            }
 
             .section7 h1 {
                 opacity: 0;
@@ -503,17 +380,17 @@
 
             .section7 h1:nth-child(2) {
                 animation-delay: 2s;
-                margin-bottom: 1rem;
+                margin-bottom: 2rem;
             }
 
             .section7 h1:nth-child(3) {
                 animation-delay: 4s;
-                margin-bottom: 1rem;
+                margin-bottom: 2rem;
             }
 
             .section7 h1:nth-child(4) {
                 animation-delay: 6s;
-                margin-bottom: 1rem;
+                margin-bottom: 3rem;
             }
 
             .section7 h1:nth-child(5) {
@@ -522,9 +399,9 @@
 
             .section8 {
                 position: relative;
-                margin-top: 90px;
+                margin: 90px 0 100px 0;
                 width: 100%;
-                height: 80vh;
+                height: 140vh;
                 background-image: url('./image/tuna01.jpeg');
                 background-size: cover;
                 background-position: center;
@@ -567,6 +444,23 @@
                     bottom: 0;
                     background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, transparent 30%);
                 z-index: 1;
+            }
+
+            .main_container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 60vh; 
+                background-image: linear-gradient(to bottom, rgba(255,255,255,0) 50%, white 100%), url('./image/tuna01.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            
+            .video-container {
+                height: 100vh; 
+                overflow: hidden; 
             }
 
             .overlay-image {
@@ -652,7 +546,7 @@
                 $(window).scroll(function () {
                     var scrT = $(window).scrollTop();
                     console.log(scrT); //스크롤 값 확인용
-                    if (scrT >= $(document).height() - $(window).height() - 10) {
+                    if (scrT >= $(document).height() - $(window).height() - 0) {
                         sessionStorage.setItem('first', 'first');
                         history.pushState(null, "");
                         window.location.href = 'main.html';
@@ -663,12 +557,12 @@
     </head>
 
     <body>
-        <div class="opaciture top_logo">
+        <div class="top_logo">
             <img src="image/4조참치_2트.png" alt="4조참치 로고">
         </div>
 
-        <div class="opaciture main_container"></div>
-        <div class="opaciture section1">
+        <div class="main_container"></div>
+        <div class="section1">
             <span class="sec_span">
                 <h1>럭셔리 참치 전문 레스토랑 <span class="highlight">4조</span>참치에 오신것을 환영합니다.</h2>
                     <h3>
@@ -687,8 +581,6 @@
             <div class="opacifalse opacityCover2"></div>
         </div>
 
-        <!-- <div class="opacifalse section4"></div> -->
-
         <div class="opacitrue section4">
             <h1>여러분이 꿈꿔왔던 모든것들.</h1>
             <h1>누구보다 한걸음 먼저 나아가 꿈이 아닌 현실이 되도록 해드리겠습니다.</h1>
@@ -698,26 +590,22 @@
         </div>
 
         <div class="opacitrue section6">
-            <div class="opaciture overlay-image">
+            <div class="overlay-image">
                 <img src="./image/4조참치_2트.png" alt="big_logo">
             </div>
         </div>
         
-    
         <div class="opacitrue section7">
-            <h1><img src="./image/4조참치_2트.png" alt="4조참치 로고">는 약속합니다.</h1>
+            <h1 style="font-size: 80px; padding-left:50px"><img src="./image/4조참치_2트.png" alt="4조참치 로고" style="width: 305px;">는 약속합니다.</h1>
             <h1>하나, 적극적으로 소통합니다.</h1>
             <h1>둘, 자신의 일을 끝까지 책임지고 수행합니다.</h1>
             <h1>셋, 서로 존중합니다.</h1>
             <h1>넷, 절대 결석, 지각하지 않습니다.</h1>
         </div>
         
-
         <div class="opacitrue section8">
             <h1>준비된 <span class="highlight">4조</span>참치 보러가기</h1>
             <img src="./image/arrow.png" alt="arrow" class="bounce" />
         </div>
-        
     </body>
-
 </html>
