@@ -32,35 +32,52 @@
         }
 
         body {
-            background-color: skyblue;
-            padding: 0px 100px 0px 100px;
+            background-image: url('image/menu_back.jpeg');
+            background-repeat: repeat;
+            background-size: auto;
         }
 
         a {
             text-decoration: none;
-            color: black;
+        }
+
+        a:hover {
+            color: gray;
         }
 
         .TopArea {
-            padding: 2%;
+            height: 200px;
+        }
+
+        .logobtn {
+            position: absolute;
+            top: 20px;
+            left: 50px;
         }
 
         .menubtn {
-            float: right;
-            font-size: 25px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100px;
+            font-size: 2.5rem;
             font-weight: bold;
         }
 
         .menubtn:hover {
-            color: blue;
+            color: rgb(16, 80, 183);
         }
 
         .IntroMain {
-            background-color: white;
+            clear: both;
+            background-color: rgba(124, 124, 124, 0.116);
+            border-radius: 30px;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 100px;
             padding: 100px;
             display: flex;
             justify-content: center;
-            margin-bottom: 100px;
         }
 
         .IntroImgArea {
@@ -88,7 +105,7 @@
         }
 
         .NameLabel {
-            color: #cfc6bc;
+            color: gray;
             font-size: 15px;
         }
 
@@ -100,7 +117,9 @@
         }
 
         .ImforIcon {
-            background-color: #FACC2E;
+            padding: 10px;
+            background-color: rgb(16, 80, 183);
+            color: white;
             font-size: 22px;
             border-radius: 5px;
             float: right;
@@ -122,9 +141,12 @@
         }
 
         .IntroSide1 {
-            background-color: white;
-            padding: 100px;
+            background-color: rgba(124, 124, 124, 0.116);
+            border-radius: 30px;
+            margin-left: 100px;
+            margin-right: 100px;
             margin-bottom: 100px;
+            padding: 100px;
         }
 
         .MBTItable {
@@ -135,7 +157,7 @@
 
         table {
             float: left;
-            border: #cfc6bc solid 2px;
+            border: rgb(16, 80, 183) solid 2px;
             width: 20%;
             height: 150px;
             padding: 100px;
@@ -147,12 +169,12 @@
         }
 
         th {
-            border: #cfc6bc solid 1px;
+            border: rgb(16, 80, 183) solid 1px;
             font-size: 30px;
         }
 
         td {
-            border: #cfc6bc solid 1px;
+            border: rgb(16, 80, 183) solid 1px;
             font-size: 20px;
         }
 
@@ -161,7 +183,7 @@
         }
 
         .MBTIsub {
-            color: #cfc6bc;
+            color: gray;
             font-size: 22px;
         }
 
@@ -180,29 +202,49 @@
             margin-top: 10px;
             text-align: center;
             font-size: 20px;
-            color: #cfc6bc;
+            color: gray;
         }
 
         .IntroSide2 {
+            background-color: rgba(124, 124, 124, 0.116);
+            border-radius: 30px;
+            margin-bottom: 100px;
+            margin-left: 100px;
+            margin-right: 100px;
             display: flex;
             justify-content: center;
             padding: 100px;
-            margin-bottom: 100px;
-            background-color: white;
         }
 
         .myStyle {
             width: 500px;
             height: 500px;
-            border: #cfc6bc solid 2px;
+            border: rgb(16, 80, 183) solid 2px;
             border-radius: 10px;
-            padding: 100px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .myLsitBox {
+            display: block;
+            margin-top: auto;
+            margin-bottom: auto;
         }
 
         .myList {
-            margin-bottom: 100px;
-            font-size: 25px;
+            width: 300px;
+            height: 75px;
+            overflow: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+        }
+
+        .myListText {
+            margin-left: 50px;
             font-family: 'WavvePADO-Regular';
+            font-size: 25px;
         }
     </style>
 
@@ -214,8 +256,8 @@
 
 <body>
     <div class="TopArea">
-        <img src="image/4조참치_2트.png" type="button" onclick="location.href='intro.html'"
-            style="width: 150px; height: 75px;">
+        <div class="logobtn"><img src="image/4조참치_2트.png" type="button" onclick="location.href='intro.html'"
+                style="width: 300px; height: auto;"></div>
         <div type="button" onclick="location.href='main.html'" class="menubtn">메뉴판</div>
     </div>
 
@@ -245,7 +287,7 @@
                             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
                     </svg> Github</a>
             </div>
-            <hr size="4px" color="#cfc6bc">
+            <hr size="4px" color="gray">
             <div class="ImforText">
                 <!-- 여기에 자기 소개 멘트를 써주세요 -->
                 안녕하세요! 저는 24살 문수정입니다.<br>
@@ -255,8 +297,8 @@
                 전공생이지만 개발 능력 및 프로젝트 경험이 많이 부족합니다.<br>
                 잘 부탁드립니다~
             </div>
-            <hr size="4px" color="#cfc6bc">
-            <div class="ImforPrice"><span style="font-size: 20px; color: #FACC2E">(\ 4,000,000,000,000)</span> 4조<spen
+            <hr size="4px" color="gray">
+            <div class="ImforPrice"><span style="font-size: 20px; color: gray">(\ 4,000,000,000,000)</span> 4조<spen
                     style="font-size: 20px;">원</spen>
             </div>
         </div>
@@ -370,27 +412,32 @@
                         style="margin-left: 20px; font-size: 30px;">나의 장점</span></span>
             </div>
             <div class="myStyle">
-                <div class="myList">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-1-circle" viewBox="0 0 16 16" style="margin-right: 10px;">
-                        <path
-                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z" />
-                    </svg>배려하는 마음<!-- 여기에 장점1을 써주세요 -->
-                </div>
-                <div class="myList">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-2-circle" viewBox="0 0 16 16" style="margin-right: 10px;">
-                        <path
-                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306" />
-                    </svg>집요한 끈기<!-- 여기에 장점2을 써주세요 -->
-                </div>
-                <div class="myList">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-3-circle" viewBox="0 0 16 16" style="margin-right: 10px;">
-                        <path
-                            d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318" />
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8" />
-                    </svg>투철한 책임감<!-- 여기에 장점3을 써주세요 -->
+                <div class="myLsitBox">
+                    <div class="myList">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-1-circle" viewBox="0 0 16 16" style="margin-top: 5px; float: left;">
+                            <path
+                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z" />
+                        </svg>
+                        <div class="myListText">배려하는 마음<!-- 여기에 장점1을 써주세요 --></div>
+                    </div>
+                    <div class="myList">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-2-circle" viewBox="0 0 16 16" style="margin-top: 5px; float: left;">
+                            <path
+                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306" />
+                        </svg>
+                        <div class="myListText">집요한 끈기<!-- 여기에 장점2을 써주세요 --></div>
+                    </div>
+                    <div class="myList" style="margin-bottom: 0px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-3-circle" viewBox="0 0 16 16" style="margin-top: 5px; float: left;">
+                            <path
+                                d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318" />
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8" />
+                        </svg>
+                        <div class="myListText">투철한 책임감<!-- 여기에 장점3을 써주세요 --></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -400,27 +447,32 @@
                         style="margin-left: 20px; font-size: 30px;">나의 협업 스타일</span></span>
             </div>
             <div class="myStyle">
-                <div class="myList">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-1-circle" viewBox="0 0 16 16" style="margin-right: 10px;">
-                        <path
-                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z" />
-                    </svg> 적극적인 의견 제시<!-- 여기에 협업 스타일1을 써주세요 -->
-                </div>
-                <div class="myList">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-2-circle" viewBox="0 0 16 16" style="margin-right: 10px;">
-                        <path
-                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306" />
-                    </svg> 즉각적인 피드백 수용<!-- 여기에 협업 스타일2을 써주세요 -->
-                </div>
-                <div class="myList">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-3-circle" viewBox="0 0 16 16" style="margin-right: 10px;">
-                        <path
-                            d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318" />
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8" />
-                    </svg> 정직하고 빠른 소통<!-- 여기에 협업 스타일3을 써주세요 -->
+                <div class="myLsitBox">
+                    <div class="myList">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-1-circle" viewBox="0 0 16 16" style="margin-top: 5px; float: left;">
+                            <path
+                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z" />
+                        </svg>
+                        <div class="myListText">적극적인 의견 제시<!-- 여기에 협업 스타일1을 써주세요 --></div>
+                    </div>
+                    <div class="myList">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-2-circle" viewBox="0 0 16 16" style="margin-top: 5px; float: left;">
+                            <path
+                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306" />
+                        </svg>
+                        <div class="myListText">즉각적인 피드백 수용<!-- 여기에 협업 스타일2을 써주세요 --></div>
+                    </div>
+                    <div class="myList" style="margin-bottom: 0px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-3-circle" viewBox="0 0 16 16" style="margin-top: 5px; float: left;">
+                            <path
+                                d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318" />
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8" />
+                        </svg>
+                        <div class="myListText">정직하고 빠른 소통<!-- 여기에 협업 스타일3을 써주세요 --></div>
+                    </div>
                 </div>
             </div>
         </div>
