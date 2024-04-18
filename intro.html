@@ -1,618 +1,627 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>다이닝 4조참치</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <title>다이닝 4조참치</title>
-        <style>
-            @font-face {
-                font-family: 'SokchoBadaBatang';
-                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SokchoBadaBatang.woff2') format('woff2');
-                font-weight: normal;
-                font-style: normal;
-            }
 
-            @font-face {
-                font-family: 'BookkMyungjo-Bd';
-                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
-                font-weight: 700;
-                font-style: normal;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다이닝 4조참치</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>다이닝 4조참치</title>
+    <style>
+        @font-face {
+            font-family: 'SokchoBadaBatang';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SokchoBadaBatang.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-            @font-face {
-                font-family: 'WavvePADO-Regular';
-                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2') format('woff2');
-                font-weight: normal;
-                font-style: normal;
-            }
+        @font-face {
+            font-family: 'BookkMyungjo-Bd';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
 
-            @font-face {
-                font-family: 'SokchoBadaDotum';
-                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SokchoBadaDotum.woff2') format('woff2');
-                font-weight: normal;
-                font-style: normal;
-            }
+        @font-face {
+            font-family: 'WavvePADO-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-            body {
-                background: white;
-                height: 700vh;
-                font-family: 'SokchoBadaDotum';
-                overflow-x: hidden;
-            }
+        @font-face {
+            font-family: 'SokchoBadaDotum';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SokchoBadaDotum.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-            div {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-                color: black;
-                text-align: center;
-                opacity: 0;
-                transition: all 2s;
-                height: 100vh;
-            } 
+        body {
+            background: white;
+            height: 700vh;
+            font-family: 'SokchoBadaDotum';
+            overflow-x: hidden;
+        }
 
-            .top_logo {
-                position: absolute; 
-                top: 20px;
-                left: 50px; 
-                z-index: 1000; 
-                height: 120px;
-            }
+        div {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            color: black;
+            text-align: center;
+            opacity: 0;
+            transition: all 2s;
+            height: 100vh;
+        }
 
-            .top_logo img {
-                width: 300px; /* 로고 이미지의 너비 */
-                height: auto; /* 이미지의 원본 비율 유지 */
-            }
+        .top_logo {
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            z-index: 1000;
+            height: 120px;
+        }
 
-            .top-text {
-                position: absolute;
-                top: 20%;
-                width: 100%;
-                justify-content: center;
-                align-items: flex-start;
-                opacity: 1;
-                transition: opacity 2s ease-in-out;
-            }
+        .top_logo img {
+            width: 300px;
+            /* 로고 이미지의 너비 */
+            height: auto;
+            /* 이미지의 원본 비율 유지 */
+        }
 
-            .section1 {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start; 
-                color: rgb(0, 0, 0);
-                text-align: left; 
-                height: 100vh;
-                background: linear-gradient(white 60vh, rgb(178, 224, 234) 100%);
-                opacity: 1;
-                transition: opacity 2s ease-in-out, transform 2s ease;
-            }
-            
-            .sec_span {
-                margin: 150px 0px 0px 65px;
-            }
+        .top-text {
+            position: absolute;
+            top: 20%;
+            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+            opacity: 1;
+            transition: opacity 2s ease-in-out;
+        }
 
-            .section1 h1 {
-                margin-left: 0px;
-                font-size: 45px;
+        .section1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: rgb(0, 0, 0);
+            text-align: left;
+            height: 100vh;
+            background: linear-gradient(white 60vh, rgb(178, 224, 234) 100%);
+            opacity: 1;
+            transition: opacity 2s ease-in-out, transform 2s ease;
+        }
+
+        .sec_span {
+            margin: 150px 0px 0px 65px;
+        }
+
+        .section1 h1 {
+            margin-left: 0px;
+            font-size: 45px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease forwards;
+            line-height: 3rem;
+            transition: transform 2s ease-in-out;
+        }
+
+        .section1 h3 {
+            font-size: 35px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease forwards;
+            line-height: 3rem;
+            transition: transform 2s ease-in-out;
+        }
+
+        .section1 h1:nth-child(1),
+        h3:nth-child(1) {
+            animation-delay: 1s;
+        }
+
+        .section1 h1:nth-child(2),
+        h3:nth-child(2) {
+            animation-delay: 3s;
+            margin-bottom: 8rem;
+        }
+
+        .section1 img {
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards 5s;
+            width: 50px;
+            height: auto;
+            margin-top: 150px;
+            align-self: center;
+        }
+
+        @keyframes fadeInUp {
+            from {
                 opacity: 0;
                 transform: translateY(20px);
-                animation: fadeInUp 1.5s ease forwards;
-                line-height: 3rem;
-                transition: transform 2s ease-in-out;
             }
 
-            .section1 h3 {
-                font-size: 35px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
-                transform: translateY(20px);
-                animation: fadeInUp 1.5s ease forwards;
-                line-height: 3rem;
-                transition: transform 2s ease-in-out;
             }
 
-            .section1 h1:nth-child(1), h3:nth-child(1) {
-                animation-delay: 1s;
-            }
-
-            .section1 h1:nth-child(2), h3:nth-child(2) {
-                animation-delay: 3s;
-                margin-bottom: 8rem;
-            }
-
-            .section1 img {
-                opacity: 0;
-                animation: fadeIn 2s ease-in-out forwards 5s;
-                width: 50px;
-                height: auto;
-                margin-top: 150px;
-                align-self: center;
-            }
-
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                }
-
-                to {
-                    opacity: 1;
-                }
-            }
-
-            .section2 {
-                width: 100%;
-                height: 100vh;
-                background-image: linear-gradient(to bottom, rgb(178, 224, 234), rgb(65, 185, 211));
+            to {
                 opacity: 1;
             }
+        }
 
-            .opacityCover1 {
-                position: absolute;
-                align-self: flex-start;
-                width: 100%;
-                height: 300px;
-                z-index: 20;
-                background: linear-gradient(to bottom, rgba(65, 185, 211, 1), rgba(65, 185, 211, 1) 10%, rgba(65, 185, 211, 0));
-            }
+        .section2 {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, rgb(178, 224, 234), rgb(65, 185, 211));
+            opacity: 1;
+        }
 
-            .opacityCover2 {
-                position: absolute;
-                align-self: flex-end;
-                width: 100%;
-                height: 300px;
-                z-index: 20;
-                background: linear-gradient(to top, rgba(0, 25, 89, 1), rgba(0, 25, 89, 1) 10%, rgba(0, 25, 89, 0));
-            }
+        .opacityCover1 {
+            position: absolute;
+            align-self: flex-start;
+            width: 100%;
+            height: 300px;
+            z-index: 20;
+            background: linear-gradient(to bottom, rgba(65, 185, 211, 1), rgba(65, 185, 211, 1) 10%, rgba(65, 185, 211, 0));
+        }
 
-            .section3 {
-                opacity: 1; /* !important 제거 */
-                height: 100vh;
-                overflow: hidden;
-                position: relative;
-            }
+        .opacityCover2 {
+            position: absolute;
+            align-self: flex-end;
+            width: 100%;
+            height: 300px;
+            z-index: 20;
+            background: linear-gradient(to top, rgba(0, 25, 89, 1), rgba(0, 25, 89, 1) 10%, rgba(0, 25, 89, 0));
+        }
 
-            .section3 .opacityCover1,
-            .section3 .opacityCover2 {
-                opacity: 1; /* !important 제거 */
-            }
+        .section3 {
+            opacity: 1;
+            /* !important 제거 */
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
 
-            .section3 video {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                opacity: 1;
-            }
+        .section3 .opacityCover1,
+        .section3 .opacityCover2 {
+            opacity: 1;
+            /* !important 제거 */
+        }
 
-            .section3::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(to bottom, rgb(65, 185, 211) 0%, rgb(74, 118, 214) 100%);
-                z-index: 2;
-                opacity: 0;
-            }
+        .section3 video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+        }
 
-            .section3::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(to bottom, rgb(16, 80, 183) 0%, rgb(2, 32, 80) 100%);
-                z-index: 3;
-                opacity: 0.2;
-            }
+        .section3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgb(65, 185, 211) 0%, rgb(74, 118, 214) 100%);
+            z-index: 2;
+            opacity: 0;
+        }
 
-            .section4::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 50%;
-                background: linear-gradient(to bottom, rgb(2, 32, 80) 0%, rgb(255, 255, 255) 100%);
-                z-index: -1;
-                opacity: 0.1;
-            }
+        .section3::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgb(16, 80, 183) 0%, rgb(2, 32, 80) 100%);
+            z-index: 3;
+            opacity: 0.2;
+        }
 
-            .section4 {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center; /* 중앙 정렬을 위해 변경 */
-                text-align: center; /* 텍스트 중앙 정렬 */
-                background: linear-gradient(to bottom, rgb(0, 25, 89) 0%, rgba(0, 25, 89, 1) 10%, rgba(0, 25, 89, 0.95) 15%, rgba(0, 25, 89, 0.90) 25%, rgba(0, 25, 89, 0) 80%);
-                align-items: center; 
-                position: relative;
-                overflow: hidden;
-            }
+        .section4::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, rgb(2, 32, 80) 0%, rgb(255, 255, 255) 100%);
+            z-index: -1;
+            opacity: 0.1;
+        }
 
-            .section4 {
-                opacity: 1; /* !important 제거 */
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center; 
-                text-align: center; 
-                background: linear-gradient(to bottom, rgb(0, 25, 89) 0%, rgba(0, 25, 89, 1) 10%, rgba(0, 25, 89, 0.95) 15%, rgba(0, 25, 89, 0.90) 25%, rgba(0, 25, 89, 0) 80%);
-                align-items: center; 
-                position: relative;
-                overflow: hidden;
-            }
+        .section4 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* 중앙 정렬을 위해 변경 */
+            text-align: center;
+            /* 텍스트 중앙 정렬 */
+            background: linear-gradient(to bottom, rgb(0, 25, 89) 0%, rgba(0, 25, 89, 1) 10%, rgba(0, 25, 89, 0.95) 15%, rgba(0, 25, 89, 0.90) 25%, rgba(0, 25, 89, 0) 80%);
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-            .section4 span {
-                margin: 0px 0px 0px 80px;
-            }
+        .section4 {
+            opacity: 1;
+            /* !important 제거 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgb(0, 25, 89) 0%, rgba(0, 25, 89, 1) 10%, rgba(0, 25, 89, 0.95) 15%, rgba(0, 25, 89, 0.90) 25%, rgba(0, 25, 89, 0) 80%);
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-            .section4 h1, h3 {
-                opacity: 0;
-                transform: translateY(20px);
-                animation: fadeInUp 1.5s ease forwards;
-                line-height: 3rem;
-                transition: transform 2s ease-in-out;
-            }
+        .section4 span {
+            margin: 0px 0px 0px 80px;
+        }
 
-            .section4 h1:nth-child(1) {
-                animation-delay: 1s;
-            }
+        .section4 h1,
+        h3 {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+        }
 
-            .section4 h1:nth-child(2) {
-                animation-delay: 2s;
-                margin-bottom: 8rem;
-            }
+        .section4 h1:nth-child(2) {
+            margin-bottom: 8rem;
+        }
 
-            .section4 h1:nth-child(3) {
-                animation-delay: 3s;
-            }
+        .section4 h1:nth-child(4) {
+            margin-bottom: 8rem;
+        }
 
-            .section4 h1:nth-child(4) {
-                animation-delay: 3s;
-                margin-bottom: 8rem;
-            }
+        .section6 {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('./image/tuna02.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
 
-            .section4 h1:nth-child(5) {
-                animation-delay: 4s;
-            }
+        .section6::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, transparent 30%);
+            z-index: 1;
+        }
 
-            .section6 {
-                position: relative; 
-                width: 100%;
-                height: 100vh;
-                background-image: url('./image/tuna02.jpeg');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                color: white;
-            }
+        .section6::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, transparent 30%);
+            z-index: 1;
+        }
 
-            .section6::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, transparent 30%);
-                z-index: 1;
-            }
-
-            .section6::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, transparent 30%);
-                z-index: 1;
-            }
-
-            .section7 {
-                margin-top: 120px;
-                width: 100%;
-                height: 120vh;
-                background-image: url('./image/promise_03.jpeg');
-                background-size: 100% auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: left; /* 텍스트를 왼쪽으로 정렬 */
-                color: rgb(1, 1, 1);
-                flex-direction: column;
-                padding: 0 20px;
-            }
-
-            .section7 h1 {
-                opacity: 0;
-                transform: translateY(20px);
-                animation: fadeInUp 1.5s ease forwards;
-                line-height: 3rem;
-                transition: transform 2s ease-in-out;
-                text-align: left; /* 텍스트 왼쪽 정렬 */
-                width: 80%; /* 적당한 너비 설정 */
-                max-width: 960px; /* 최대 너비 설정 */
-                margin: 0 auto; /* 자동 마진을 통해 가운데 정렬 */
-                padding-left: 0; /* 필요 없는 왼쪽 패딩 제거 */
-            }
+        .section7 {
+            margin-top: 120px;
+            width: 100%;
+            height: 120vh;
+            background-image: url('./image/promise_03.jpeg');
+            background-size: 100% auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            color: rgb(1, 1, 1);
+            flex-direction: column;
+            padding: 0 20px;
+        }
 
 
-            .section7 h1 {
-                opacity: 0;
-                transform: translateY(20px);
-                animation: fadeInUp 1.5s ease forwards;
-                line-height: 3rem;
-                transition: transform 2s ease-in-out;
-                text-align: left; /* 모든 h1 태그를 왼쪽 정렬로 설정 */
-                width: 100%; /* 전체 너비를 사용하도록 설정 */
-                padding-left: 20px; /* 왼쪽 패딩을 추가하여 내용이 완전히 왼쪽에 붙지 않도록 함 */
+        .section7 h1 {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+            width: 50%;
+            /* 중앙정렬을 위하여. 이게 100%면 완전 왼쪽에서 시작됨. */
+            padding-left: 50px;
+            /* 모든 h1 요소의 시작점 같게 */
+        }
+
+
+        .section7 h1:nth-child(1) {
+            margin-bottom: 6rem;
+        }
+
+        .section7 h1:nth-child(2) {
+            margin-bottom: 2rem;
+        }
+
+        .section7 h1:nth-child(3) {
+            margin-bottom: 2rem;
+        }
+
+        .section7 h1:nth-child(4) {
+            margin-bottom: 2rem;
+        }
+
+        .section8 {
+            position: relative;
+            margin: 90px 0 100px 0;
+            width: 100%;
+            height: 140vh;
+            background-image: url('./image/tuna01.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+
+        .section8 h1 {
+            font-size: 80px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease forwards;
+            line-height: 3rem;
+            transition: transform 2s ease-in-out;
+            animation-delay: 1s;
+            margin: 0 700px 200px 0;
+        }
+
+        .section8::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, transparent 30%);
+            z-index: 1;
+        }
+
+        .section8::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, transparent 30%);
+            z-index: 1;
+        }
+
+        .main_container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60vh;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, white 100%), url('./image/tuna01.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .video-container {
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: 150px;
+            left: 120px;
+            width: 45%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .overlay-image img {
+            width: 120%;
+            height: auto;
+            opacity: 1;
+        }
+
+        .highlight {
+            background-color: red;
+            border-radius: 10px;
+            color: rgb(1, 1, 1);
+            padding: 2px 4px 0 4px;
+            margin: 2px;
+        }
+
+        .bounce {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bouncing 2s infinite;
+            width: 100px;
+            height: auto;
+        }
+
+        @keyframes bouncing {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(-50%) translateY(0);
             }
 
-            .section7 h1 {
-                opacity: 0;
-                transform: translateY(20px);
-                animation: fadeInUp 1.5s ease forwards;
-                line-height: 3rem;
-                transition: transform 2s ease-in-out;
+            40% {
+                transform: translateX(-50%) translateY(-20px);
             }
 
-            .section7 h1:nth-child(1) {
-                animation-delay: 1s;
-                margin-bottom: 6rem;
+            60% {
+                transform: translateX(-50%) translateY(-10px);
             }
+        }
 
-            .section7 h1:nth-child(2) {
-                animation-delay: 2s;
-                margin-bottom: 2rem;
-            }
+        .line {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 5px;
+        }
 
-            .section7 h1:nth-child(3) {
-                animation-delay: 4s;
-                margin-bottom: 2rem;
-            }
-
-            .section7 h1:nth-child(4) {
-                animation-delay: 6s;
-                margin-bottom: 3rem;
-            }
-
-            .section7 h1:nth-child(5) {
-                animation-delay: 8s;
-            }
-
-            .section8 {
-                position: relative;
-                margin: 90px 0 100px 0;
-                width: 100%;
-                height: 140vh;
-                background-image: url('./image/tuna01.jpeg');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                color: rgb(0, 0, 0);
-            }
-
-            .section8 h1 {
-                font-size: 80px; 
-                opacity: 0;
-                transform: translateY(20px);
-                animation: fadeInUp 1.5s ease forwards;
-                line-height: 3rem;
-                transition: transform 2s ease-in-out;
-                animation-delay: 1s; 
-                margin:0 700px 200px 0;
-            }
-
-            .section8::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, transparent 30%);
-                z-index: 1;
-            }
-
-            .section8::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                    bottom: 0;
-                    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, transparent 30%);
-                z-index: 1;
-            }
-
-            .main_container {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 60vh; 
-                background-image: linear-gradient(to bottom, rgba(255,255,255,0) 50%, white 100%), url('./image/tuna01.jpeg');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-            
-            .video-container {
-                height: 100vh; 
-                overflow: hidden; 
-            }
-
-            .overlay-image {
-                position: absolute;
-                top: 150px;
-                left: 120px;
-                width: 45%; 
-                height: auto; 
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 2;
-            }
-
-            .overlay-image img {
-                width: 120%; 
-                height: auto;
-                opacity: 1;
-            }
-
-            .highlight {
-                background-color: red; 
-                border-radius: 10px; 
-                color: rgb(1, 1, 1);
-                padding: 2px 4px 0 4px;
-                margin: 2px;
-            }
-            
-            .bounce {
-                position: absolute;
-                bottom: 20%; 
-                left: 50%; 
-                transform: translateX(-50%);
-                animation: bouncing 2s infinite; 
-                width: 100px; 
-                height: auto; 
-            }
-
-            @keyframes bouncing {
-                0%, 20%, 50%, 80%, 100% {
-                    transform: translateX(-50%) translateY(0);
-                }
-                40% {
-                    transform: translateX(-50%) translateY(-20px);
-                }
-                60% {
-                    transform: translateX(-50%) translateY(-10px);
-                }
-            }
-
-            .line {
-                display: block;
-                margin-top: 18px; 
-                margin-bottom: 5px; 
-            }
-
-            .line:first-child {
-                margin-top: 100px;
-            }
-            
-        </style>
-        <script>
-            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-            document.addEventListener("DOMContentLoaded", ready);
-            function ready() {
-                let observer = new IntersectionObserver((e) => {
-                    e.forEach((ob) => {
-                        if (ob.isIntersecting) {
-                            console.log(ob.target);
-                            if (ob.target.className == 'img1') {
-                                ob.target.style.opacity = 0.5;
-                                setTimeout(function () {
-                                    ob.target.style.backgroundImage = 'url("src/logo.png")';
-                                }, 2000);
-                            } else {
-                                ob.target.style.opacity = 1;
-                            }
-                        }
-                    });
-                });
-                let divs = document.querySelectorAll('div');
-                divs.forEach(div => observer.observe(div));
-                $(window).scroll(function () {
-                    var scrT = $(window).scrollTop();
-                    console.log(scrT); //스크롤 값 확인용
-                    if (scrT >= $(document).height() - $(window).height() - 0) {
-                        sessionStorage.setItem('first', 'first');
-                        history.pushState(null, "");
-                        window.location.href = 'main.html';
+        .line:first-child {
+            margin-top: 100px;
+        }
+    </style>
+    <script>
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        document.addEventListener("DOMContentLoaded", ready);
+        function ready() {
+            let observer = new IntersectionObserver((e) => {// 모든 요소를 불투명하게 설정
+                e.forEach((ob) => {
+                    if (ob.isIntersecting) {
+                        console.log(ob.target);
+                        ob.target.style.opacity = 1;
                     }
                 });
-            }
-        </script>
-    </head>
 
-    <body>
-        <div class="top_logo">
-            <img src="image/4조참치_2트.png" alt="4조참치 로고">
-        </div>
+                //섹션4 문구 하나씩 띄우기
+                let section4Observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = 1;
+                            entry.target.style.transform = 'translateY(0)';
+                            entry.target.style.transition = 'opacity 2s ease-in-out, transform 2s ease-in-out';
+                            entry.target.style.transitionDelay = `${1.5 * entry.target.dataset.index}s`;
+                            section4Observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
 
-        <div class="main_container"></div>
-        <div class="section1">
-            <span class="sec_span">
-                <h1>럭셔리 참치 전문 레스토랑 <span class="highlight">4조</span>참치에 오신것을 환영합니다.</h2>
-                    <h3>
-                        <span class="line">거친 파도처럼 숨가쁘게 돌아가는 바쁜 일상 속,</span>
-                        <span class="line">맛있는 음식과 고급와인, 분위기 좋은 음악을 듣는 편안한 휴식을 꿈꾸셨다면,</span>
-                        <span class="line">저희를 찾아오신 여러분들께 최고의 경험을 선사해드리겠습니다.</span>
-                    </h3>                    
-            </span> 
-        </div>
+                // 섹션4 h1요소 전체 선택(인덱스 부여)
+                document.querySelectorAll(".section4 h1, .section4 h3").forEach((element, index) => {
+                    element.dataset.index = index;
+                    section4Observer.observe(element);
+                });
 
-        <div class="opacifalse section2"></div>
+                //섹션7 문구 하나씩 띄우기
+                let section7Observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const index = entry.target.dataset.index;
+                            const delay = index * 1.5;  // 2초 간격으로 딜레이 적용
+                            entry.target.style.transitionDelay = `${delay}s`;
+                            entry.target.style.opacity = 1;
+                            entry.target.style.transform = 'translateY(0)';
+                            section7Observer.unobserve(entry.target);  // 애니메이션 후 관찰 중단
+                        }
+                    });
+                }, { threshold: 0.5 });
 
-        <div class="opacifalse section3">
-            <div class="opacifalse opacityCover1"></div>
-            <video src="video/tuna.mp4" autoplay muted loop preload="auto"></video>
-            <div class="opacifalse opacityCover2"></div>
-        </div>
+                // 섹션7 h1요소 전체 선택(인덱스 부여) - 섹션4랑 통합하면 섹션4에 닿을때 섹션7의 문구들도 같이 나타남. 분리한 이유
+                document.querySelectorAll(".section7 h1").forEach((element, index) => {
+                    element.dataset.index = index;
+                    section7Observer.observe(element);
+                });
+            });
 
-        <div class="opacitrue section4">
-            <h1>여러분이 꿈꿔왔던 모든것들.</h1>
-            <h1>누구보다 한걸음 먼저 나아가 꿈이 아닌 현실이 되도록 해드리겠습니다.</h1>
-            <h1>스파르타 코딩클럽 내일 배움 캠프의 거친 파도를 가르고 나아가,</h1>
-            <h1>여러분들의 직원, 동료, 후배 혹은 대표가 되어 함께 솟아오를,</h1>
-            <h1>저희는 바로…</h1>
-        </div>
 
-        <div class="opacitrue section6">
-            <div class="overlay-image">
-                <img src="./image/4조참치_2트.png" alt="big_logo">
-            </div>
+            let divs = document.querySelectorAll('div');
+            divs.forEach(div => observer.observe(div));
+
+            $(window).scroll(function () {
+                var scrT = $(window).scrollTop();
+                console.log(scrT); //스크롤 값 확인용
+                if (scrT >= $(document).height() - $(window).height() - 10) {
+                    sessionStorage.setItem('first', 'first');
+                    history.pushState(null, "");
+                    window.location.href = 'main.html';
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="top_logo">
+        <img src="image/4조참치_2트.png" alt="4조참치 로고">
+    </div>
+
+    <div class="main_container"></div>
+    <div class="section1">
+        <span class="sec_span">
+            <h1>럭셔리 참치 전문 레스토랑 <span class="highlight">4조</span>참치에 오신것을 환영합니다.</h2>
+                <h3>
+                    <span class="line">거친 파도처럼 숨가쁘게 돌아가는 바쁜 일상 속,</span>
+                    <span class="line">맛있는 음식과 고급와인, 분위기 좋은 음악을 듣는 편안한 휴식을 꿈꾸셨다면,</span>
+                    <span class="line">저희를 찾아오신 여러분들께 최고의 경험을 선사해드리겠습니다.</span>
+                </h3>
+        </span>
+    </div>
+
+    <div class="opacifalse section2"></div>
+
+    <div class="opacifalse section3">
+        <div class="opacifalse opacityCover1"></div>
+        <video src="video/tuna.mp4" autoplay muted loop preload="auto"></video>
+        <div class="opacifalse opacityCover2"></div>
+    </div>
+
+    <div class="opacitrue section4">
+        <h1>여러분이 꿈꿔왔던 모든것들.</h1>
+        <h1>누구보다 한걸음 먼저 나아가 꿈이 아닌 현실이 되도록 해드리겠습니다.</h1>
+        <h1>스파르타 코딩클럽 내일 배움 캠프의 거친 파도를 가르고 나아가,</h1>
+        <h1>여러분들의 직원, 동료, 후배 혹은 대표가 되어 함께 솟아오를,</h1>
+        <h1>저희는 바로…</h1>
+    </div>
+
+    <div class="opacitrue section6">
+        <div class="overlay-image">
+            <img src="./image/4조참치_2트.png" alt="big_logo">
         </div>
-        
-        <div class="opacitrue section7">
-            <h1 style="font-size: 80px; padding-left:50px"><img src="./image/4조참치_2트.png" alt="4조참치 로고" style="width: 305px;">는 약속합니다.</h1>
-            <h1>하나, 적극적으로 소통합니다.</h1>
-            <h1>둘, 자신의 일을 끝까지 책임지고 수행합니다.</h1>
-            <h1>셋, 서로 존중합니다.</h1>
-            <h1>넷, 절대 결석, 지각하지 않습니다.</h1>
-        </div>
-        
-        <div class="opacitrue section8">
-            <h1>준비된 <span class="highlight">4조</span>참치 보러가기</h1>
-            <img src="./image/arrow.png" alt="arrow" class="bounce" />
-        </div>
-    </body>
+    </div>
+
+    <div class="opacitrue section7">
+        <h1 style="font-size: 80px; padding-left:50px"><img src="./image/4조참치_2트.png" alt="4조참치 로고"
+                style="width: 305px;">는 약속합니다.</h1>
+        <h1>하나, 적극적으로 소통합니다.</h1>
+        <h1>둘, 자신의 일을 끝까지 책임지고 수행합니다.</h1>
+        <h1>셋, 서로 존중합니다.</h1>
+        <h1>넷, 절대 결석, 지각하지 않습니다.</h1>
+    </div>
+
+    <div class="opacitrue section8">
+        <h1>준비된 <span class="highlight">4조</span>참치 보러가기</h1>
+        <img src="./image/arrow.png" alt="arrow" class="bounce" />
+    </div>
+</body>
+
 </html>
